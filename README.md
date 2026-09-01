@@ -2,6 +2,13 @@
 
 GitHub Pages-ready portfolio for Pravin Shendkar, Senior Flutter Developer.
 
+## Highlights
+
+- Personal Finance App presented as the primary independent project with end-to-end ownership.
+- Momentum Insure presented as the second strongest project, with production-scale context and direct Google Play/App Store links.
+- Momentum contribution focuses on Flutter development, Figma UI implementation, REST APIs, GoSafe SDK usage, journey tracking, Accident Alert, Digital Safety, Maxidor, BLoC/Cubit and production maintenance.
+- Existing CI/CD pipeline is described as used at Momentum; CI/CD implementation is highlighted under the Personal Finance App.
+
 ## Deploy to GitHub Pages
 
 1. Create a GitHub repository, for example `portfolio`.
@@ -17,3 +24,5 @@ GitHub Pages-ready portfolio for Pravin Shendkar, Senior Flutter Developer.
 - Personal Finance screenshots: `assets/screenshots/`
 - Main page: `index.html`
 - GitHub: `https://github.com/pravinshendkar`
+- Momentum Google Play: `https://play.google.com/store/apps/details?id=za.co.momentum.client`
+- Momentum App Store: `https://apps.apple.com/in/app/momentum-app/id1195176122`
