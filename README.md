@@ -44,9 +44,9 @@ All screenshots are stored in `assets/screenshots/`. Project carousels follow th
   - `assets/screenshots/nexcart_3.png` (Slide 3: Shopping Cart)
   *(Note: `nxtcart_{1,2,3}.png` are maintained as aliases for compatibility)*
 - **TradeFlow:**
-  - `assets/screenshots/tradeflow_1.png` (Slide 1: Market Overview)
-  - `assets/screenshots/tradeflow_2.png` (Slide 2: Trade Execution)
-  - `assets/screenshots/tradeflow_3.png` (Slide 3: Portfolio Positions)
+  - `assets/screenshots/tradeflow_1.png` (Slide 1: Portfolio Holdings & Analytics)
+  - `assets/screenshots/tradeflow_2.png` (Slide 2: Custom Watchlists)
+  - `assets/screenshots/tradeflow_3.png` (Slide 3: Live Market Feed)
 
 ## Customize
 
