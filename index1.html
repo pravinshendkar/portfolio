@@ -1,0 +1,2220 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Pravin Shendkar — Senior Flutter Developer with 8+ years of mobile engineering experience (6+ years in Flutter & Dart). Specializing in Clean Architecture, BLoC/Cubit, and production-scale mobile applications." />
+  <meta name="keywords" content="Pravin Shendkar, Senior Flutter Developer, Flutter Engineer, Dart, Clean Architecture, BLoC, Cubit, Mobile Developer, Android Developer, Mumbai" />
+  <meta name="author" content="Pravin Shendkar" />
+  <meta name="theme-color" content="#07090e" />
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
+  <title>Pravin Shendkar — Senior Flutter Developer | 8+ Years Mobile Experience</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #07090e;
+      --surface: #0e121a;
+      --surface2: #141a26;
+      --surface-elevated: #1a2232;
+      --text: #f8fafc;
+      --muted: #94a3b8;
+      --subtle: #64748b;
+      --line: #1e2636;
+      --line-hover: #334155;
+      --accent: #8b6dff;
+      --accent-glow: rgba(139, 109, 255, 0.22);
+      --accent2: #2dd4bf;
+      --accent2-glow: rgba(45, 212, 191, 0.2);
+      --max: 1140px;
+      --radius: 20px;
+      --radius-sm: 12px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: radial-gradient(circle at 75% 4%, rgba(139, 109, 255, 0.12), transparent 32rem),
+                  radial-gradient(circle at 15% 35%, rgba(45, 212, 191, 0.05), transparent 26rem),
+                  var(--bg);
+      color: var(--text);
+      font-family: Inter, system-ui, -apple-system, sans-serif;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+    a { color: inherit; text-decoration: none; }
+    .container { width: min(calc(100% - 48px), var(--max)); margin: auto; }
+
+    /* Nav */
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(7, 9, 14, 0.82);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    }
+    .nav-inner {
+      height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+    .brand {
+      display: flex;
+      flex-direction: column;
+    }
+    .brand-title {
+      font-family: "Space Grotesk", sans-serif;
+      font-weight: 700;
+      font-size: 20px;
+      letter-spacing: -0.02em;
+      color: var(--text);
+    }
+    .brand-title span { color: var(--accent); }
+    .brand-subtitle {
+      font-size: 11px;
+      color: var(--muted);
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      font-weight: 600;
+      margin-top: -2px;
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 500;
+    }
+    .nav-links a {
+      transition: color 0.2s ease;
+      position: relative;
+    }
+    .nav-links a:hover { color: var(--text); }
+    .nav-cta {
+      padding: 9px 16px;
+      border-radius: 10px;
+      border: 1px solid var(--accent);
+      background: rgba(139, 109, 255, 0.12);
+      color: #ded7ff !important;
+      font-weight: 600;
+      font-size: 13px;
+      transition: all 0.2s ease;
+    }
+    .nav-cta:hover {
+      background: var(--accent);
+      color: #07090e !important;
+      box-shadow: 0 0 20px var(--accent-glow);
+    }
+    .nav-toggle {
+      display: none;
+      background: transparent;
+      border: 1px solid var(--line);
+      color: var(--text);
+      padding: 8px 12px;
+      border-radius: 8px;
+      font-size: 18px;
+      cursor: pointer;
+    }
+
+    /* Hero */
+    .hero {
+      min-height: calc(100vh - 72px);
+      display: flex;
+      align-items: center;
+      padding: 70px 0 85px;
+    }
+    .availability-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      padding: 7px 14px;
+      border-radius: 999px;
+      background: rgba(45, 212, 191, 0.1);
+      border: 1px solid rgba(45, 212, 191, 0.3);
+      color: #5eead4;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      margin-bottom: 22px;
+    }
+    .pulse-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--accent2);
+      box-shadow: 0 0 12px rgba(45, 212, 191, 0.9);
+      animation: pulse 2.2s infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.55; transform: scale(0.85); }
+    }
+    h1, h2, h3, h4 {
+      font-family: "Space Grotesk", sans-serif;
+      line-height: 1.1;
+      margin: 0;
+      color: var(--text);
+    }
+    h1 {
+      font-size: clamp(44px, 6.5vw, 76px);
+      letter-spacing: -0.05em;
+      font-weight: 800;
+      max-width: 960px;
+      margin-bottom: 18px;
+    }
+    .gradient-text {
+      background: linear-gradient(110deg, #ffffff 15%, #c8bcff 55%, #8b6dff 95%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    .hero-role {
+      font-size: clamp(20px, 3vw, 28px);
+      font-weight: 600;
+      color: #ded7ff;
+      margin-bottom: 16px;
+      letter-spacing: -0.02em;
+    }
+    .hero p.lead {
+      font-size: clamp(16px, 2vw, 19px);
+      color: var(--muted);
+      max-width: 760px;
+      margin: 0 0 28px;
+      line-height: 1.65;
+    }
+    .lead strong { color: var(--text); }
+    .hero-meta-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 32px;
+    }
+    .meta-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      color: #cbd5e1;
+      font-size: 12px;
+      font-weight: 500;
+    }
+    .actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 13px 20px;
+      border-radius: 12px;
+      border: 1px solid var(--line);
+      background: var(--surface);
+      font-weight: 600;
+      font-size: 14px;
+      color: var(--text);
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+      cursor: pointer;
+    }
+    .btn:hover {
+      transform: translateY(-2px);
+      border-color: var(--line-hover);
+      background: var(--surface2);
+      color: #ffffff;
+    }
+    .btn.primary {
+      background: #f8fafc;
+      color: #07090e;
+      border-color: #f8fafc;
+      font-weight: 700;
+    }
+    .btn.primary:hover {
+      background: #ffffff;
+      box-shadow: 0 8px 24px rgba(255, 255, 255, 0.16);
+      transform: translateY(-2px);
+    }
+    .btn.accent {
+      background: var(--accent);
+      color: #07090e;
+      border-color: var(--accent);
+      font-weight: 700;
+    }
+    .btn.accent:hover {
+      background: #9d83ff;
+      box-shadow: 0 8px 24px var(--accent-glow);
+    }
+
+    /* Stats Grid */
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin-top: 55px;
+    }
+    .stat-card {
+      border: 1px solid var(--line);
+      background: linear-gradient(180deg, rgba(20, 26, 38, 0.6) 0%, rgba(14, 18, 26, 0.8) 100%);
+      padding: 24px 20px;
+      border-radius: 18px;
+      transition: border-color 0.2s ease, transform 0.2s ease;
+    }
+    .stat-card:hover {
+      border-color: var(--line-hover);
+      transform: translateY(-2px);
+    }
+    .stat-card strong {
+      display: block;
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 34px;
+      font-weight: 800;
+      color: var(--text);
+      letter-spacing: -0.03em;
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+    .stat-card span {
+      font-size: 13px;
+      color: var(--muted);
+      font-weight: 500;
+      line-height: 1.4;
+      display: block;
+    }
+
+    /* Section Headers */
+    section { padding: 95px 0; }
+    .section-kicker {
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .section-title {
+      font-size: clamp(32px, 4.5vw, 48px);
+      letter-spacing: -0.04em;
+      font-weight: 800;
+      margin-bottom: 16px;
+    }
+    .section-copy {
+      color: var(--muted);
+      max-width: 720px;
+      font-size: 16px;
+      line-height: 1.65;
+      margin: 0 0 36px;
+    }
+
+    /* About Grid */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.25fr 0.85fr;
+      gap: 48px;
+      align-items: start;
+    }
+    .about-text p {
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.7;
+      margin: 0 0 18px;
+    }
+    .about-text p strong { color: var(--text); }
+    .value-card {
+      border: 1px solid var(--line);
+      background: linear-gradient(180deg, var(--surface) 0%, rgba(14, 18, 26, 0.6) 100%);
+      border-radius: var(--radius);
+      padding: 30px;
+    }
+    .value-card h3 {
+      font-size: 20px;
+      margin-bottom: 18px;
+      color: #ded7ff;
+    }
+    .value-list {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .value-item {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      font-size: 14px;
+      color: #cbd5e1;
+    }
+    .value-icon {
+      color: var(--accent2);
+      font-size: 16px;
+      line-height: 1.4;
+      flex-shrink: 0;
+    }
+
+    /* Skills Grid */
+    .skills-categories {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+    .skill-card {
+      border: 1px solid var(--line);
+      background: var(--surface);
+      border-radius: 16px;
+      padding: 24px;
+      transition: all 0.2s ease;
+    }
+    .skill-card:hover {
+      border-color: var(--line-hover);
+      background: var(--surface2);
+      transform: translateY(-2px);
+    }
+    .skill-card-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 14px;
+    }
+    .skill-card-icon {
+      font-size: 18px;
+    }
+    .skill-card h3 {
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--text);
+    }
+    .skill-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .chip {
+      border: 1px solid var(--line);
+      background: rgba(14, 18, 26, 0.9);
+      padding: 6px 11px;
+      border-radius: 8px;
+      font-size: 12px;
+      font-weight: 500;
+      color: #e2e8f0;
+      transition: border-color 0.2s ease;
+    }
+    .chip.primary-tech {
+      border-color: rgba(139, 109, 255, 0.4);
+      background: rgba(139, 109, 255, 0.08);
+      color: #e0d7ff;
+      font-weight: 600;
+    }
+
+    /* Visual Tech Stack Showcase (Hero Badges & Domain Cards) */
+    .tech-stack-showcase {
+      margin-bottom: 48px;
+    }
+    .tech-badges-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 34px;
+    }
+    .tech-badges-row-primary {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+    }
+    .tech-badges-row-secondary {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+    }
+    .tech-badge-lg {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 22px;
+      background: #0f131f;
+      border: 1px solid rgba(255, 255, 255, 0.09);
+      border-radius: 9999px;
+      color: #fff;
+      font-size: 1.02rem;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.35);
+      cursor: default;
+    }
+    .tech-badge-lg:hover {
+      transform: translateY(-2px);
+      border-color: rgba(139, 109, 255, 0.45);
+      box-shadow: 0 8px 26px rgba(139, 109, 255, 0.2);
+      background: #141929;
+    }
+    .tech-badge-lg svg {
+      width: 24px;
+      height: 24px;
+      flex-shrink: 0;
+    }
+    .tech-badge-sm {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 15px;
+      background: rgba(15, 19, 31, 0.75);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 9999px;
+      color: #94a3b8;
+      font-size: 0.86rem;
+      font-weight: 500;
+      transition: all 0.2s ease;
+      cursor: default;
+    }
+    .tech-badge-sm:hover {
+      color: #fff;
+      border-color: rgba(255, 255, 255, 0.16);
+      background: rgba(22, 28, 46, 0.85);
+      transform: translateY(-1px);
+    }
+    .tech-badge-sm svg {
+      width: 16px;
+      height: 16px;
+      flex-shrink: 0;
+    }
+
+    /* 4 Domain Focus Cards */
+    .domain-cards {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+    .domain-card {
+      background: #0d111d;
+      border: 1px solid rgba(255, 255, 255, 0.07);
+      border-radius: 14px;
+      padding: 22px 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      transition: all 0.25s ease;
+    }
+    .domain-card:hover {
+      border-color: rgba(139, 109, 255, 0.35);
+      transform: translateY(-3px);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+      background: #111626;
+    }
+    .domain-card-title {
+      font-size: 0.98rem;
+      font-weight: 700;
+      color: #fff;
+      letter-spacing: -0.01em;
+    }
+    .domain-card-desc {
+      font-size: 0.86rem;
+      color: #94a3b8;
+      line-height: 1.55;
+      margin: 0;
+    }
+    .domain-card-desc strong {
+      color: #e2e8f0;
+      font-weight: 600;
+    }
+    .domain-tagline {
+      margin-top: 22px;
+      text-align: center;
+      padding: 12px 18px;
+      background: rgba(139, 109, 255, 0.05);
+      border: 1px dashed rgba(139, 109, 255, 0.25);
+      border-radius: 10px;
+      color: #cbd5e1;
+      font-size: 0.9rem;
+    }
+    .domain-tagline span {
+      color: var(--primary-light, #a78bfa);
+      font-weight: 600;
+    }
+
+    /* Experience Timeline */
+    .timeline {
+      position: relative;
+      margin-top: 36px;
+    }
+    .timeline::before {
+      content: "";
+      position: absolute;
+      left: 12px;
+      top: 14px;
+      bottom: 24px;
+      width: 2px;
+      background: linear-gradient(180deg, var(--accent) 0%, var(--accent2) 70%, var(--line) 100%);
+    }
+    .job {
+      position: relative;
+      padding-left: 48px;
+      padding-bottom: 44px;
+    }
+    .job:last-child { padding-bottom: 0; }
+    .job-node {
+      position: absolute;
+      left: 6px;
+      top: 6px;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: var(--bg);
+      border: 3px solid var(--accent);
+      box-shadow: 0 0 12px var(--accent-glow);
+    }
+    .job.featured .job-node {
+      border-color: var(--accent2);
+      box-shadow: 0 0 14px var(--accent2-glow);
+    }
+    .job-card {
+      border: 1px solid var(--line);
+      background: var(--surface);
+      border-radius: 18px;
+      padding: 28px;
+      transition: border-color 0.2s ease, transform 0.2s ease;
+    }
+    .job.featured .job-card {
+      border-color: rgba(139, 109, 255, 0.45);
+      background: linear-gradient(160deg, rgba(20, 26, 38, 0.9) 0%, rgba(14, 18, 26, 0.95) 100%);
+      box-shadow: 0 12px 36px rgba(0, 0, 0, 0.35);
+    }
+    .job-card:hover {
+      border-color: var(--line-hover);
+      transform: translateY(-2px);
+    }
+    .job-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 16px;
+      margin-bottom: 8px;
+      flex-wrap: wrap;
+    }
+    .job-role {
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--text);
+    }
+    .job-date {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--accent2);
+      background: rgba(45, 212, 191, 0.1);
+      padding: 4px 10px;
+      border-radius: 6px;
+      border: 1px solid rgba(45, 212, 191, 0.25);
+    }
+    .job-company {
+      font-size: 15px;
+      font-weight: 600;
+      color: #ded7ff;
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .job-tag {
+      font-size: 11px;
+      color: var(--muted);
+      border: 1px solid var(--line);
+      padding: 2px 8px;
+      border-radius: 999px;
+      font-weight: 500;
+    }
+    .job ul {
+      margin: 0;
+      padding-left: 20px;
+      color: #cbd5e1;
+      font-size: 14px;
+    }
+    .job li {
+      margin: 8px 0;
+      line-height: 1.6;
+    }
+    .job li strong { color: var(--text); }
+    .job-stack {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 18px;
+      padding-top: 14px;
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+    }
+    .job-stack span {
+      font-size: 11px;
+      color: var(--muted);
+      background: rgba(255, 255, 255, 0.04);
+      padding: 3px 8px;
+      border-radius: 6px;
+      border: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    /* Projects Section */
+    .project {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: linear-gradient(155deg, rgba(18, 24, 34, 0.95) 0%, rgba(10, 14, 20, 0.98) 100%);
+      overflow: hidden;
+      margin-bottom: 32px;
+      transition: border-color 0.25s ease, box-shadow 0.25s ease;
+    }
+    .project:hover {
+      border-color: rgba(139, 109, 255, 0.4);
+      box-shadow: 0 16px 44px rgba(0, 0, 0, 0.45);
+    }
+    .project.featured-project {
+      border-color: rgba(139, 109, 255, 0.5);
+      background: linear-gradient(155deg, rgba(22, 28, 42, 0.95) 0%, rgba(12, 16, 24, 0.98) 100%);
+      box-shadow: 0 16px 48px rgba(139, 109, 255, 0.08);
+    }
+    .project-top {
+      padding: 38px;
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 40px;
+    }
+    .project-badge-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 14px;
+    }
+    .project-badge {
+      display: inline-block;
+      padding: 5px 11px;
+      border: 1px solid rgba(139, 109, 255, 0.35);
+      background: rgba(139, 109, 255, 0.1);
+      border-radius: 999px;
+      color: #ded7ff;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+    .project-badge.production-badge {
+      border-color: rgba(45, 212, 191, 0.4);
+      background: rgba(45, 212, 191, 0.12);
+      color: #5eead4;
+    }
+    .project h3 {
+      font-size: 34px;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      margin: 0 0 12px;
+    }
+    .project-lead {
+      color: #cbd5e1;
+      font-size: 15px;
+      line-height: 1.65;
+      margin: 0 0 20px;
+    }
+    .feature-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin: 20px 0;
+    }
+    .feature {
+      padding: 12px 14px;
+      border: 1px solid var(--line);
+      background: rgba(14, 18, 26, 0.6);
+      border-radius: 10px;
+      font-size: 13px;
+    }
+    .feature strong {
+      display: block;
+      color: var(--text);
+      font-size: 13px;
+      margin-bottom: 2px;
+    }
+    .feature span {
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.4;
+      display: block;
+    }
+    .contribution-box {
+      border-left: 3px solid var(--accent);
+      background: rgba(139, 109, 255, 0.06);
+      padding: 12px 16px;
+      border-radius: 0 10px 10px 0;
+      margin: 20px 0;
+      font-size: 13.5px;
+      color: #cbd5e1;
+      line-height: 1.6;
+    }
+    .contribution-box strong { color: #f8fafc; }
+    .project-links {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 22px;
+    }
+
+    /* Visual Media & Phone Gallery */
+    .project-visual {
+      min-height: 560px;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: radial-gradient(circle at 50% 25%, rgba(139, 109, 255, 0.16), transparent 42%), #090c12;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+      padding: 24px 16px;
+    }
+    .app-gallery {
+      width: min(380px, 100%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+    }
+    .gallery-stage {
+      width: min(290px, 82%);
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .gallery-main {
+      width: 100%;
+      max-height: 480px;
+      object-fit: contain;
+      object-position: center;
+      border: 5px solid #222938;
+      border-radius: 28px;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.55);
+      display: block;
+      transition: opacity 0.18s ease, transform 0.18s ease;
+      background: #000;
+    }
+    .gallery-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      border: 1px solid var(--line);
+      background: rgba(7, 9, 14, 0.9);
+      color: var(--text);
+      font-size: 20px;
+      line-height: 1;
+      display: grid;
+      place-items: center;
+      cursor: pointer;
+      z-index: 5;
+      transition: all 0.2s ease;
+    }
+    .gallery-arrow:hover {
+      background: var(--surface2);
+      border-color: var(--accent);
+      transform: translateY(-50%) scale(1.08);
+    }
+    .gallery-prev { left: -44px; }
+    .gallery-next { right: -44px; }
+    .gallery-caption {
+      color: #94a3b8;
+      font-size: 12.5px;
+      font-weight: 500;
+      text-align: center;
+      min-height: 18px;
+    }
+    .gallery-dots {
+      display: flex;
+      gap: 7px;
+      justify-content: center;
+    }
+    .gallery-dot {
+      width: 8px;
+      height: 8px;
+      border: 0;
+      border-radius: 50%;
+      background: #334155;
+      padding: 0;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .gallery-dot.active {
+      background: var(--accent);
+      transform: scale(1.3);
+      box-shadow: 0 0 10px var(--accent-glow);
+    }
+
+    /* Momentum Metrics Visual */
+    .momentum-scale {
+      width: 100%;
+      max-width: 360px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .momentum-scale-header {
+      text-align: center;
+      margin-bottom: 6px;
+    }
+    .momentum-scale-label {
+      color: #5eead4;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+    .momentum-metrics-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+    }
+    .metric-card {
+      border: 1px solid var(--line);
+      background: rgba(14, 18, 26, 0.85);
+      padding: 20px;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+    .metric-card strong {
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 32px;
+      font-weight: 800;
+      color: var(--text);
+    }
+    .metric-card span {
+      color: var(--muted);
+      font-size: 13px;
+      text-align: right;
+      line-height: 1.35;
+    }
+    .momentum-tech-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+      justify-content: center;
+      margin-top: 6px;
+    }
+    .momentum-tech-list span {
+      border: 1px solid var(--line);
+      background: var(--surface);
+      padding: 6px 10px;
+      border-radius: 999px;
+      color: #cbd5e1;
+      font-size: 11px;
+      font-weight: 500;
+    }
+
+    /* Architectural Pillars */
+    .pillar-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-top: 40px;
+    }
+    .pillar-card {
+      border: 1px solid var(--line);
+      background: var(--surface);
+      padding: 28px 24px;
+      border-radius: 18px;
+      transition: all 0.2s ease;
+    }
+    .pillar-card:hover {
+      border-color: var(--line-hover);
+      transform: translateY(-2px);
+    }
+    .pillar-kicker {
+      font-size: 11px;
+      font-weight: 800;
+      color: var(--accent2);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 10px;
+    }
+    .pillar-card h3 {
+      font-size: 20px;
+      margin-bottom: 10px;
+      color: var(--text);
+    }
+    .pillar-card p {
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    /* Contact Section */
+    .contact {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 55px;
+      background: radial-gradient(circle at 85% 20%, rgba(139, 109, 255, 0.16), transparent 35%),
+                  radial-gradient(circle at 15% 85%, rgba(45, 212, 191, 0.08), transparent 30%),
+                  var(--surface);
+    }
+    .contact h2 {
+      font-size: clamp(34px, 5vw, 54px);
+      max-width: 720px;
+      margin-bottom: 14px;
+    }
+    .contact p {
+      color: var(--muted);
+      max-width: 650px;
+      font-size: 16px;
+      line-height: 1.65;
+      margin: 0 0 28px;
+    }
+    .contact-details {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-bottom: 30px;
+    }
+    .contact-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 14px;
+      border-radius: 10px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid var(--line);
+      color: #e2e8f0;
+      font-size: 13.5px;
+    }
+    .contact-row {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    /* Footer */
+    .footer {
+      padding: 40px 0 60px;
+      color: var(--muted);
+      font-size: 13px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    /* Reveal Animations */
+    .reveal {
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1), transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: none;
+    }
+    @media print, (prefers-reduced-motion: reduce) {
+      .reveal { opacity: 1 !important; transform: none !important; }
+    }
+
+    /* Responsive */
+    @media (max-width: 960px) {
+      .project-top { grid-template-columns: 1fr; gap: 30px; padding: 28px; }
+      .about-grid { grid-template-columns: 1fr; gap: 32px; }
+      .skills-categories { grid-template-columns: 1fr 1fr; }
+      .domain-cards { grid-template-columns: 1fr 1fr; }
+      .stats { grid-template-columns: 1fr 1fr; }
+      .pillar-cards { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 800px) {
+      .nav-links { display: none; }
+      .nav-links.open {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 72px;
+        left: 0;
+        right: 0;
+        background: rgba(7, 9, 14, 0.98);
+        border-bottom: 1px solid var(--line);
+        padding: 24px;
+        gap: 18px;
+      }
+      .nav-toggle { display: block; }
+      .hero { padding: 60px 0 70px; }
+      .project-visual { min-height: 500px; }
+    }
+    @media (max-width: 600px) {
+      .skills-categories { grid-template-columns: 1fr; }
+      .domain-cards { grid-template-columns: 1fr; }
+      .tech-badge-lg { padding: 10px 16px; font-size: 0.94rem; }
+      .stats { grid-template-columns: 1fr; }
+      .feature-list { grid-template-columns: 1fr; }
+      .gallery-prev { left: -16px; }
+      .gallery-next { right: -16px; }
+      .contact { padding: 32px 24px; }
+      .footer { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="nav" id="navbar">
+    <div class="container nav-inner">
+      <a class="brand" href="#top">
+        <span class="brand-title">Pravin Shendkar<span>.</span></span>
+        <span class="brand-subtitle">Senior Flutter Developer</span>
+      </a>
+      <div class="nav-links" id="navLinks">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+        <a class="nav-cta" href="assets/Pravin-Shendkar-Resume.pdf" target="_blank">Resume (PDF) ↗</a>
+      </div>
+      <button class="nav-toggle" id="navToggle" type="button" aria-label="Toggle navigation menu">☰</button>
+    </div>
+  </nav>
+
+  <main id="top">
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="container reveal">
+        <div class="availability-badge">
+          <span class="pulse-dot"></span> Available Immediately · Senior Roles &amp; Freelance Projects
+        </div>
+        <div class="hero-role">Senior Flutter Developer · Mobile Architect</div>
+        <h1>
+          Building <span class="gradient-text">production mobile apps</span> that scale to millions.
+        </h1>
+        <p class="lead">
+          Mobile Engineer with <strong>8+ years of total development experience</strong>, including <strong>6+ years specializing in Flutter &amp; Dart</strong> and a foundational native Android background in Kotlin &amp; Java. Focused on Clean Architecture, BLoC/Cubit, robust local persistence, and end-to-end product delivery.
+        </p>
+
+        <div class="hero-meta-pills">
+          <span class="meta-pill">📍 Navi Mumbai, India</span>
+          <span class="meta-pill">🎓 B.E. Computer Engineering</span>
+          <span class="meta-pill">☁️ AWS Certified Cloud Practitioner</span>
+          <span class="meta-pill">🛡️ 20K+ Safety Users Supported</span>
+        </div>
+
+        <div class="actions">
+          <a class="btn primary" href="#projects">Explore Selected Work ↓</a>
+          <a class="btn" href="assets/Pravin-Shendkar-Resume.pdf" target="_blank">Download Resume (PDF) ↗</a>
+          <a class="btn" href="https://www.linkedin.com/in/pravin-shendkar-flutter-developer/" target="_blank" rel="noreferrer">LinkedIn ↗</a>
+          <a class="btn" href="https://github.com/pravinshendkar" target="_blank" rel="noreferrer">GitHub ↗</a>
+        </div>
+
+        <div class="stats">
+          <div class="stat-card">
+            <strong>8+</strong>
+            <span>Years Mobile App Development</span>
+          </div>
+          <div class="stat-card">
+            <strong>6+</strong>
+            <span>Years with Flutter &amp; Dart</span>
+          </div>
+          <div class="stat-card">
+            <strong>20K+</strong>
+            <span>Active Users on Safety Features</span>
+          </div>
+          <div class="stat-card">
+            <strong>500K+</strong>
+            <span>Downloads on Supported Products</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+      <div class="container">
+        <div class="about-grid">
+          <div class="about-text reveal">
+            <div class="section-kicker">01 — Profile &amp; Mindset</div>
+            <h2 class="section-title">Engineer first. Product minded. Decision owner.</h2>
+            <p>
+              I specialize in architecting maintainable, scalable mobile applications across <strong>insurance, healthcare, social, and fintech</strong> domains. For me, software engineering is not merely about writing code that works today; it is about establishing architectural boundaries so an application effortlessly accommodates its next 20 features without technical debt.
+            </p>
+            <p>
+              I take full end-to-end ownership across the entire software development lifecycle: translating Figma designs into fluid 60fps Flutter UI, designing clean domain use-cases, implementing predictable reactive state with BLoC/Cubit, integrating RESTful services &amp; native SDKs, handling offline persistence with Hive/SQLite, and maintaining automated CI/CD deployment pipelines to the Google Play Store and Apple App Store.
+            </p>
+            <p>
+              Holding a <strong>Bachelor of Computer Engineering</strong> and the <strong>AWS Certified Cloud Practitioner</strong> credential, I bridge the gap between front-end mobile experiences and backend cloud infrastructure.
+            </p>
+          </div>
+
+          <div class="value-card reveal">
+            <div class="quick-facts-badge">Overview</div>
+            <h3>Quick Summary</h3>
+            <div class="value-list">
+              <div class="value-item">
+                <span class="value-icon">✓</span>
+                <div><strong>Status:</strong> Immediate Joiner · Resigned (LWD: 30th Sept 2024 · Notice Period Completed)</div>
+              </div>
+              <div class="value-item">
+                <span class="value-icon">✓</span>
+                <div><strong>Open To:</strong> Full-Time Senior Roles &amp; Freelance / Contract Projects</div>
+              </div>
+              <div class="value-item">
+                <span class="value-icon">✓</span>
+                <div><strong>Recent Role:</strong> Senior Engineer at Momentum Services Pvt Ltd (Nov 2022 – Sep 2024)</div>
+              </div>
+              <div class="value-item">
+                <span class="value-icon">✓</span>
+                <div><strong>Primary Stack:</strong> Flutter, Dart, BLoC/Cubit, Clean Architecture, REST APIs</div>
+              </div>
+              <div class="value-item">
+                <span class="value-icon">✓</span>
+                <div><strong>Native Mobile:</strong> Kotlin, Java, Android SDK, Native Platform Channels</div>
+              </div>
+              <div class="value-item">
+                <span class="value-icon">✓</span>
+                <div><strong>Target Roles:</strong> Senior Flutter Developer / Mobile Tech Lead</div>
+              </div>
+              <div class="value-item">
+                <span class="value-icon">✓</span>
+                <div><strong>Location:</strong> Navi Mumbai, India (Open to Remote, Hybrid &amp; Relocation)</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+      <div class="container">
+        <div class="reveal">
+          <div class="section-kicker">02 — Technical Expertise</div>
+          <h2 class="section-title">Production-tested tech stack.</h2>
+          <p class="section-copy">
+            A comprehensive, categorized breakdown of the technologies, architectural patterns, and engineering practices I employ to build scalable mobile software.
+          </p>
+        </div>
+
+        <!-- Visual Tech Stack Showcase (Hero Badges & Domain Cards) -->
+        <div class="tech-stack-showcase reveal">
+          <div class="tech-badges-container">
+            <!-- Primary Core Badges -->
+            <div class="tech-badges-row-primary">
+              <div class="tech-badge-lg" title="Flutter — 6+ Years Experience">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <path d="M14.314 0L2.3 12 6.07 15.772 21.859 0h-7.545z" fill="#42A5F5"/>
+                  <path d="M14.314 12.029L8.3 18.043 12.07 21.815 21.859 12.029h-7.545z" fill="#0D47A1"/>
+                  <path d="M6.07 15.772L9.842 12l3.772 3.772-3.772 3.772L6.07 15.772z" fill="#29B6F6"/>
+                </svg>
+                <span>Flutter</span>
+              </div>
+              <div class="tech-badge-lg" title="Android SDK &amp; Ecosystem">
+                <svg viewBox="0 0 24 24" fill="#3DDC84">
+                  <path d="M6 18c0 .55.45 1 1 1h1v3.5c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5V19h2v3.5c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5V19h1c.55 0 1-.45 1-1V8H6v10zM3.5 8C2.67 8 2 8.67 2 9.5v7c0 .83.67 1.5 1.5 1.5S5 17.33 5 16.5v-7C5 8.67 4.33 8 3.5 8zm17 0c-.83 0-1.5.67-1.5 1.5v7c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5v-7c0-.83-.67-1.5-1.5-1.5zm-4.97-4.84l1.3-1.3c.2-.2.2-.51 0-.71-.2-.2-.51-.2-.71 0l-1.48 1.48C13.85 2.23 12.95 2 12 2c-.96 0-1.86.23-2.66.63L7.85.15c-.2-.2-.51-.2-.71 0-.2.2-.2.51 0 .71l1.31 1.31C6.97 3.26 6 5.01 6 7h12c0-1.99-.97-3.75-2.47-4.84zM10 5H9V4h1v1zm5 0h-1V4h1v1z"/>
+                </svg>
+                <span>Android</span>
+              </div>
+              <div class="tech-badge-lg" title="Kotlin Native Android Development">
+                <svg viewBox="0 0 24 24">
+                  <path d="M24 24H0V0h24L12 12Z" fill="#7F52FF"/>
+                  <path d="M0 24L12 12 24 24Z" fill="#C711E1"/>
+                  <path d="M0 0l12 12L0 24Z" fill="#E4485D"/>
+                </svg>
+                <span>Kotlin</span>
+              </div>
+              <div class="tech-badge-lg" title="Dart Language">
+                <svg viewBox="0 0 24 24">
+                  <path d="M4.1 3.5L12 2l8.5 4.5L22 17l-9.5 5L4.1 17.5V3.5z" fill="#00B4AB"/>
+                  <path d="M4.1 3.5L12 2v20l-7.9-4.5V3.5z" fill="#0175C2"/>
+                  <path d="M12 2l8.5 4.5-3.8 11.2L12 22V2z" fill="#55BFE4"/>
+                </svg>
+                <span>Dart</span>
+              </div>
+              <div class="tech-badge-lg" title="Firebase Backend &amp; Cloud Services">
+                <svg viewBox="0 0 24 24">
+                  <path d="M3.9 18.5L7.5 3.3c.1-.5.7-.7 1-.3l3.6 6.8L3.9 18.5z" fill="#FFA000"/>
+                  <path d="M14.2 9.8l2.2-4.2c.3-.5 1-.4 1.2.2L20.1 18.5 14.2 9.8z" fill="#F57C00"/>
+                  <path d="M20.1 18.5l-8.1 4.5c-.3.2-.7.2-1 0L3.9 18.5 12 1.3c.3-.5 1-.5 1.3 0l6.8 17.2z" fill="#FFCA28"/>
+                </svg>
+                <span>Firebase</span>
+              </div>
+            </div>
+
+            <!-- Secondary Ecosystem Badges -->
+            <div class="tech-badges-row-secondary">
+              <div class="tech-badge-sm">
+                <svg viewBox="0 0 24 24" fill="#f89820"><path d="M8.8 16.5c0 .3.3.6.8.8 1.4.5 3 .6 4.6.6 2.3 0 4.1-.3 5.4-1.2-2.3.2-4.5.3-6.8.2-1.8-.1-3.4-.3-4-.4zm-1.2 2.6c1.5.3 3.3.4 5.2.4 2.4 0 4.6-.2 6.5-.8-.8.6-2.6 1.1-5.7 1.1-2.4 0-4.4-.3-6-.7zm10.7-5.5c2.3-.9 3.2-2.2 3.2-3.4 0-1.5-1.2-2.7-3.2-3.1.4.7.5 1.5.3 2.3-.4 1.4-1.6 2.5-3.5 3.1 1.4.3 2.4.6 3.2 1.1z"/></svg>
+                <span>Java</span>
+              </div>
+              <div class="tech-badge-sm">
+                <svg viewBox="0 0 24 24" fill="#29B6F6"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                <span>BLoC &amp; Cubit</span>
+              </div>
+              <div class="tech-badge-sm">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#2dd4bf" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+                <span>Clean Architecture</span>
+              </div>
+              <div class="tech-badge-sm">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 14.899A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 2.5 8.242"/><path d="M8 19h8"/><path d="M12 15v6"/></svg>
+                <span>REST APIs</span>
+              </div>
+              <div class="tech-badge-sm">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
+                <span>SQLite &amp; Hive</span>
+              </div>
+              <div class="tech-badge-sm">
+                <svg viewBox="0 0 24 24" fill="#3395FF"><path d="M14.5 2H4L2 22h5l1.5-6h4.5c4.7 0 8.5-3.6 8.5-7s-3.3-7-7-7zm-.5 8.5h-4l1.2-4.5h3c1.7 0 3 1 3 2.3s-1.3 2.2-3.2 2.2z"/></svg>
+                <span>Razorpay</span>
+              </div>
+              <div class="tech-badge-sm">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#f43f5e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                <span>Flutter Web</span>
+              </div>
+              <div class="tech-badge-sm">
+                <svg viewBox="0 0 24 24" fill="#00E676"><path d="M3.6 1.8c-.4.4-.6 1-.6 1.8v16.8c0 .8.2 1.4.6 1.8l.1.1 9.4-9.4v-.2L3.7 1.7l-.1.1zM16.7 15.3l-3.6-3.6 3.6-3.6 4.1 2.3c1.2.7 1.2 1.8 0 2.5l-4.1 2.4zM13.1 11.7L3.7 2.3l8.3 8.3 1.1 1.1zM13.1 12.3l-9.4 9.4 9.4-9.4z"/></svg>
+                <span>Google Play</span>
+              </div>
+              <div class="tech-badge-sm">
+                <svg viewBox="0 0 24 24" fill="#A2AAAD"><path d="M18.7 19.5c-.8 1.2-1.7 2.4-3 2.5-1.3.1-1.8-.8-3.3-.8-1.5 0-2 .8-3.3.8-1.3 0-2.3-1.3-3.1-2.5-1.7-2.4-3-6.9-1.2-9.9 1-1.6 2.6-2.6 4.3-2.6 1.3 0 2.5.9 3.3.9.8 0 2.3-1.1 3.9-.9 1.4.1 2.6.7 3.3 1.7-3.1 1.7-2.6 6.1.4 7.3-.6 1.3-1.3 2.6-2.3 3.5zm-4.3-16c.7-.9 1.2-2.1 1-3.5-1.1.1-2.4.8-3.1 1.7-.6.7-1.2 2-1 3.3 1.2.1 2.4-.6 3.1-1.5z"/></svg>
+                <span>App Store</span>
+              </div>
+              <div class="tech-badge-sm">
+                <svg viewBox="0 0 24 24" fill="#F05032"><path d="M21.6 10.9L13.1 2.4c-.6-.6-1.5-.6-2.1 0L8.9 4.5l2.7 2.7c.6-.2 1.4 0 1.9.5.5.5.7 1.3.5 1.9l2.6 2.6c.6-.2 1.4 0 1.9.5.8.8.8 2 0 2.8-.8.8-2 .8-2.8 0-.6-.6-.7-1.4-.5-2.1l-2.4-2.4v5.3c.2.2.4.4.5.7.5.8.3 1.9-.5 2.5-.8.5-1.9.3-2.5-.5-.5-.8-.3-1.9.5-2.5.3-.2.6-.3.9-.3V9.1c-.3 0-.6-.1-.9-.3-.8-.5-1-1.6-.5-2.5.4-.6 1-.9 1.6-.9L8.1 3.7 2.4 9.4c-.6.6-.6 1.5 0 2.1l8.5 8.5c.6.6 1.5.6 2.1 0l8.5-8.5c.6-.6.6-1.6.1-2.2z"/></svg>
+                <span>Git &amp; CI/CD</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- 4 Core Domain Focus Cards (Matching Reference Layout) -->
+          <div class="domain-cards">
+            <div class="domain-card">
+              <div class="domain-card-title">Mobile apps</div>
+              <p class="domain-card-desc">
+                <strong>Flutter &amp; Android</strong> — architecture, APIs, Firebase, and the direct path from technical plan to Google Play &amp; App Store listing.
+              </p>
+            </div>
+            <div class="domain-card">
+              <div class="domain-card-title">Web &amp; admin</div>
+              <p class="domain-card-desc">
+                <strong>Flutter web admin</strong>, dashboards, and responsive marketing/admin portals when the product needs cross-platform parity.
+              </p>
+            </div>
+            <div class="domain-card">
+              <div class="domain-card-title">Native hard parts</div>
+              <p class="domain-card-desc">
+                <strong>GPS &amp; telematics, biometrics</strong>, local encryption, background services, payment gateways, video, push, and offline-first data.
+              </p>
+            </div>
+            <div class="domain-card">
+              <div class="domain-card-title">Freelance delivery</div>
+              <p class="domain-card-desc">
+                <strong>Scope &amp; architecture</strong>, team mentorship, rigorous code reviews, RCA, client communication, and reliable production releases.
+              </p>
+            </div>
+          </div>
+
+          <div class="domain-tagline">
+            <span>Java · Kotlin · Flutter · Dart · Lead Engineering</span> — Flutter-first for apps, with native depth, clean modular architecture, and reliable delivery across 20K+ active users.
+          </div>
+        </div>
+
+        <div class="skills-categories">
+          <!-- 1. Mobile & Languages -->
+          <div class="skill-card reveal">
+            <div class="skill-card-header">
+              <span class="skill-card-icon">📱</span>
+              <h3>Languages &amp; Core</h3>
+            </div>
+            <div class="skill-chips">
+              <span class="chip primary-tech">Flutter (6+ yrs)</span>
+              <span class="chip primary-tech">Dart</span>
+              <span class="chip primary-tech">Kotlin</span>
+              <span class="chip primary-tech">Java</span>
+              <span class="chip">Android SDK</span>
+              <span class="chip">Platform Channels</span>
+            </div>
+          </div>
+
+          <!-- 2. State Management -->
+          <div class="skill-card reveal">
+            <div class="skill-card-header">
+              <span class="skill-card-icon">⚡</span>
+              <h3>State Management</h3>
+            </div>
+            <div class="skill-chips">
+              <span class="chip primary-tech">BLoC</span>
+              <span class="chip primary-tech">Cubit</span>
+              <span class="chip">GetX</span>
+              <span class="chip">Provider</span>
+              <span class="chip">Riverpod</span>
+              <span class="chip">Reactive Streams</span>
+            </div>
+          </div>
+
+          <!-- 3. Architecture & Principles -->
+          <div class="skill-card reveal">
+            <div class="skill-card-header">
+              <span class="skill-card-icon">🏛️</span>
+              <h3>Architecture &amp; Design</h3>
+            </div>
+            <div class="skill-chips">
+              <span class="chip primary-tech">Clean Architecture</span>
+              <span class="chip primary-tech">Feature-First Modular</span>
+              <span class="chip">MVVM</span>
+              <span class="chip">SOLID Principles</span>
+              <span class="chip">Dependency Injection (get_it)</span>
+              <span class="chip">Repository Pattern</span>
+            </div>
+          </div>
+
+          <!-- 4. Backend & Cloud -->
+          <div class="skill-card reveal">
+            <div class="skill-card-header">
+              <span class="skill-card-icon">☁️</span>
+              <h3>Backend &amp; APIs</h3>
+            </div>
+            <div class="skill-chips">
+              <span class="chip primary-tech">REST APIs</span>
+              <span class="chip primary-tech">Firebase Auth</span>
+              <span class="chip">Cloud Firestore</span>
+              <span class="chip">Push Notifications (FCM)</span>
+              <span class="chip">Crashlytics</span>
+              <span class="chip">Google Analytics</span>
+              <span class="chip primary-tech">AWS Certified</span>
+            </div>
+          </div>
+
+          <!-- 5. Persistence & Security -->
+          <div class="skill-card reveal">
+            <div class="skill-card-header">
+              <span class="skill-card-icon">🔒</span>
+              <h3>Persistence &amp; Security</h3>
+            </div>
+            <div class="skill-chips">
+              <span class="chip primary-tech">Hive NoSQL</span>
+              <span class="chip">SQLite / sqflite</span>
+              <span class="chip">SharedPreferences</span>
+              <span class="chip">Flutter Secure Storage</span>
+              <span class="chip">Biometric Authentication</span>
+              <span class="chip">Encrypted Backup / Restore</span>
+            </div>
+          </div>
+
+          <!-- 6. Testing & DevOps -->
+          <div class="skill-card reveal">
+            <div class="skill-card-header">
+              <span class="skill-card-icon">🚀</span>
+              <h3>Delivery &amp; Tooling</h3>
+            </div>
+            <div class="skill-chips">
+              <span class="chip primary-tech">Unit Testing</span>
+              <span class="chip">Git / GitHub Actions</span>
+              <span class="chip primary-tech">CI/CD Pipelines</span>
+              <span class="chip">Google Play Console</span>
+              <span class="chip">App Store Connect</span>
+              <span class="chip">Android Studio</span>
+              <span class="chip">VS Code</span>
+              <span class="chip">Agile / Scrum</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience">
+      <div class="container">
+        <div class="reveal">
+          <div class="section-kicker">03 — Career Progression</div>
+          <h2 class="section-title">8+ years of shipping software.</h2>
+          <p class="section-copy">
+            A continuous progression from foundational native Android engineering to architecting enterprise-grade mobile systems at scale.
+          </p>
+        </div>
+
+        <div class="timeline">
+          <!-- 1. Momentum Services (Senior Role) -->
+          <article class="job featured reveal">
+            <div class="job-node"></div>
+            <div class="job-card">
+              <div class="job-header">
+                <div>
+                  <div class="job-role">Senior Engineer</div>
+                  <div class="job-company">
+                    Momentum Services Pvt Ltd
+                    <span class="job-tag">Momentum App · Short-Term Insurance &amp; Safety</span>
+                    <span class="job-tag" style="color:#5eead4; border-color:rgba(45,212,191,0.4);">Featured Enterprise Production</span>
+                  </div>
+                </div>
+                <div class="job-date">Nov 2022 — Sep 2024 (LWD: 30th Sep 2024)</div>
+              </div>
+              <ul>
+                <li>
+                  <strong>Feature Ownership &amp; Scale:</strong> Owned and delivered mission-critical customer safety features including <strong>Accident Alert</strong>, <strong>Digital Safety</strong>, <strong>Safe Dayz</strong>, and <strong>Maxidor</strong> within the Momentum mobile app, actively serving <strong>20,000+ policyholders</strong>.
+                </li>
+                <li>
+                  <strong>Scalable Modular Architecture:</strong> Implemented a <strong>Feature-First Clean Architecture</strong> powered by <strong>BLoC/Cubit</strong>, decoupling independent domain modules and significantly improving developer velocity and long-term maintainability.
+                </li>
+                <li>
+                  <strong>SDK Integrations &amp; Analytics:</strong> Integrated native third-party SDKs including <strong>GoSafe</strong> for road safety vehicle telemetry and configured <strong>Google Analytics</strong> tracking to capture accurate user interaction funnels and safety feature engagement.
+                </li>
+                <li>
+                  <strong>Production Reliability &amp; Mentorship:</strong> Conducted comprehensive peer code reviews, enforced architecture standards, resolved production bugs, and ensured continuous, zero-downtime releases via the automated CI/CD pipeline.
+                </li>
+              </ul>
+              <div class="job-stack">
+                <span>Flutter</span>
+                <span>Dart</span>
+                <span>BLoC / Cubit</span>
+                <span>Feature-First Clean Architecture</span>
+                <span>GoSafe SDK</span>
+                <span>REST APIs</span>
+                <span>Google Analytics</span>
+                <span>CI/CD</span>
+                <span>Play Store &amp; App Store Deployment</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- 2. Reliance Industries Ltd -->
+          <article class="job reveal">
+            <div class="job-node"></div>
+            <div class="job-card">
+              <div class="job-header">
+                <div>
+                  <div class="job-role">Software Engineer</div>
+                  <div class="job-company">
+                    Reliance Industries Ltd
+                    <span class="job-tag">MK · Enterprise Social &amp; Rewards Platform</span>
+                  </div>
+                </div>
+                <div class="job-date">Jan 2021 — Nov 2022</div>
+              </div>
+              <ul>
+                <li>
+                  <strong>Engagement &amp; Onboarding:</strong> Engineered dynamic social engagement and reward workflows using Flutter and GetX, boosting user onboarding completion rates by <strong>25%</strong>.
+                </li>
+                <li>
+                  <strong>Reusable Architecture:</strong> Architected reusable Flutter widget modules and standardized network integration layers, improving code reuse across mobile teams and accelerating feature turnaround time.
+                </li>
+                <li>
+                  <strong>API Integration &amp; Performance:</strong> Integrated enterprise REST APIs, implemented secure data caching strategies, and resolved edge-case runtime defects in high-frequency user workflows.
+                </li>
+              </ul>
+              <div class="job-stack">
+                <span>Flutter</span>
+                <span>Dart</span>
+                <span>GetX</span>
+                <span>REST APIs</span>
+                <span>Reusable UI Components</span>
+                <span>Agile Scrum</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- 3. Argents InfoSystem -->
+          <article class="job reveal">
+            <div class="job-node"></div>
+            <div class="job-card">
+              <div class="job-header">
+                <div>
+                  <div class="job-role">Mobile Application Developer</div>
+                  <div class="job-company">
+                    Argents InfoSystem Pvt Ltd
+                    <span class="job-tag">LifeEasy · Healthcare Services Platform</span>
+                  </div>
+                </div>
+                <div class="job-date">Jun 2019 — Jul 2020</div>
+              </div>
+              <ul>
+                <li>
+                  <strong>Healthcare Workflow Engineering:</strong> Implemented end-to-end mobile features for doctor appointments, ambulance booking dispatch, and diagnostic lab-test scheduling supporting <strong>10,000+ appointments and 5,000+ service bookings</strong>.
+                </li>
+                <li>
+                  <strong>API &amp; Data Integration:</strong> Integrated RESTful endpoints for real-time doctor availability and patient records, resolving key defect reports to maintain high scheduling reliability.
+                </li>
+              </ul>
+              <div class="job-stack">
+                <span>Mobile Development</span>
+                <span>Flutter &amp; Android</span>
+                <span>REST API Integration</span>
+                <span>Data Handling</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- 4. VKS Computer Services -->
+          <article class="job reveal">
+            <div class="job-node"></div>
+            <div class="job-card">
+              <div class="job-header">
+                <div>
+                  <div class="job-role">Android Developer</div>
+                  <div class="job-company">
+                    VKS Computer Services
+                    <span class="job-tag">In2Pix · Field Survey &amp; Imaging</span>
+                  </div>
+                </div>
+                <div class="job-date">May 2017 — Jun 2019</div>
+              </div>
+              <ul>
+                <li>
+                  <strong>Field Operations App:</strong> Developed foundational native Android applications deployed to <strong>100+ on-site field survey engineers</strong> for image capture, metadata tagging, and review.
+                </li>
+                <li>
+                  <strong>Image Pipeline &amp; FTP Sync:</strong> Built robust FTP-based background upload workflows and local caching that successfully processed and synchronized <strong>10,000+ high-resolution survey photos</strong> under constrained connectivity.
+                </li>
+              </ul>
+              <div class="job-stack">
+                <span>Native Android</span>
+                <span>Java</span>
+                <span>SQLite</span>
+                <span>FTP Protocols</span>
+                <span>Background Services</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section (Strict Order: 1. Momentum App, 2. Personal Finance, 3. SpeakUp, 4. SyncLife, 5. NexCart) -->
+    <section id="projects">
+      <div class="container">
+        <div class="reveal">
+          <div class="section-kicker">04 — Selected Projects</div>
+          <h2 class="section-title">Built products, not just demos.</h2>
+          <p class="section-copy">
+            A portfolio of production enterprise applications, published Android software, and feature-complete projects demonstrating architectural rigor and end-to-end execution.
+          </p>
+        </div>
+
+        <!-- Project 1: Momentum App (Enterprise Production) -->
+        <article class="project featured-project reveal">
+          <div class="project-top">
+            <div>
+              <div class="project-badge-row">
+                <span class="project-badge production-badge">Enterprise Production · Flutter</span>
+                <span class="project-badge">500K+ Downloads</span>
+                <span class="project-badge">Short-Term Insurance</span>
+              </div>
+              <h3>Momentum App</h3>
+              <p class="project-lead">
+                A customer-facing production mobile platform for Momentum Insure policyholders, delivering road safety telemetry, instant emergency response, and comprehensive short-term insurance management across Android &amp; iOS.
+              </p>
+              <div class="feature-list">
+                <div class="feature">
+                  <strong>Accident Alert</strong>
+                  <span>Emergency road incident response workflow</span>
+                </div>
+                <div class="feature">
+                  <strong>Digital Safety</strong>
+                  <span>Customer safety dashboard &amp; verification</span>
+                </div>
+                <div class="feature">
+                  <strong>Maxidor Integration</strong>
+                  <span>Physical security &amp; safety activation</span>
+                </div>
+                <div class="feature">
+                  <strong>Safe Dayz</strong>
+                  <span>Gamified road-safety trip tracking</span>
+                </div>
+                <div class="feature">
+                  <strong>GoSafe Telemetry SDK</strong>
+                  <span>Vehicle trip logging &amp; driving scores</span>
+                </div>
+                <div class="feature">
+                  <strong>Google Analytics</strong>
+                  <span>Funnel tracking &amp; feature usage metrics</span>
+                </div>
+              </div>
+              <div class="contribution-box">
+                <strong>My Contribution:</strong> Feature development and ownership in Flutter, UI translation from Figma, BLoC/Cubit state management, Feature-First architecture, GoSafe telemetry SDK integration, REST APIs, production issue resolution, and Google Analytics implementation. Delivered safety features serving <strong>20,000+ active users</strong>.
+              </div>
+              <p style="margin: 12px 0 0; color: #94a3b8; font-size: 13px;">
+                <em>Product Context: The public application has 500K+ downloads and 9.8K+ reviews on Google Play.</em>
+              </p>
+              <div class="project-links">
+                <a class="btn primary" href="https://play.google.com/store/apps/details?id=za.co.momentum.client&hl=en_IN" target="_blank" rel="noreferrer">Google Play Store ↗</a>
+                <a class="btn" href="https://apps.apple.com/in/app/momentum-app/id1195176122" target="_blank" rel="noreferrer">Apple App Store ↗</a>
+              </div>
+            </div>
+            <div class="project-visual">
+              <div class="momentum-scale">
+                <div class="momentum-scale-header">
+                  <div class="momentum-scale-label">Enterprise Production Scale</div>
+                </div>
+                <div class="momentum-metrics-grid">
+                  <div class="metric-card">
+                    <div>
+                      <strong>500K+</strong>
+                      <span style="display:block; font-size:11px; color:#5eead4;">Public Application</span>
+                    </div>
+                    <span>Android Play Store Downloads</span>
+                  </div>
+                  <div class="metric-card">
+                    <div>
+                      <strong>9.8K+</strong>
+                      <span style="display:block; font-size:11px; color:#5eead4;">Public Ratings</span>
+                    </div>
+                    <span>Verified Customer Reviews</span>
+                  </div>
+                  <div class="metric-card">
+                    <div>
+                      <strong>20K+</strong>
+                      <span style="display:block; font-size:11px; color:#a78bfa;">Direct Contribution</span>
+                    </div>
+                    <span>Active Users on Safety Features</span>
+                  </div>
+                </div>
+                <div class="momentum-tech-list">
+                  <span>Flutter</span>
+                  <span>BLoC / Cubit</span>
+                  <span>Clean Architecture</span>
+                  <span>GoSafe SDK</span>
+                  <span>Google Analytics</span>
+                  <span>REST APIs</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 2: Personal Finance Tracker (Independent Published App) -->
+        <article class="project reveal">
+          <div class="project-top">
+            <div>
+              <div class="project-badge-row">
+                <span class="project-badge production-badge">Published Android App · Independent</span>
+                <span class="project-badge">Offline-First</span>
+                <span class="project-badge">Clean Architecture</span>
+              </div>
+              <h3>Personal Finance Tracker</h3>
+              <p class="project-lead">
+                A privacy-first, fully offline personal finance management application for budgeting, expense categorization, investments, and loan tracking. Designed so sensitive financial data never leaves the user's physical device.
+              </p>
+              <div class="feature-list">
+                <div class="feature">
+                  <strong>Offline-First Data</strong>
+                  <span>Zero account or cloud server dependency</span>
+                </div>
+                <div class="feature">
+                  <strong>Income &amp; Expense Tracking</strong>
+                  <span>Multi-account ledger with fast entry</span>
+                </div>
+                <div class="feature">
+                  <strong>Budgets &amp; Visual Analytics</strong>
+                  <span>Categorized expenditure breakdown</span>
+                </div>
+                <div class="feature">
+                  <strong>Investments &amp; Loans</strong>
+                  <span>Comprehensive net-worth tracking</span>
+                </div>
+                <div class="feature">
+                  <strong>Biometric Security</strong>
+                  <span>Fingerprint / Face lock protection</span>
+                </div>
+                <div class="feature">
+                  <strong>Encrypted Backup / Restore</strong>
+                  <span>Secure local file backup and recovery</span>
+                </div>
+              </div>
+              <div class="contribution-box">
+                <strong>Independent Ownership:</strong> Designed and implemented the complete product independently from scratch — Clean Architecture layers, Hive NoSQL persistence, Cubit state management, biometric authentication, encrypted backup pipeline, and published directly to Google Play.
+              </div>
+              <div class="project-links">
+                <a class="btn primary" href="https://personal-finance-ebf6a.firebaseapp.com/" target="_blank" rel="noreferrer">Explore Live Demo ↗</a>
+                <a class="btn" href="https://play.google.com/store/apps/details?id=io.github.pravinshendkar.personalfinance" target="_blank" rel="noreferrer">Google Play Store ↗</a>
+              </div>
+            </div>
+            <div class="project-visual">
+              <div class="app-gallery" data-gallery data-project="Personal Finance" data-slides='[["assets/screenshots/account-summary.png","Account Summary — Balance &amp; Accounts"],["assets/screenshots/transactions.png","Transactions — Income &amp; Expense Flow"],["assets/screenshots/budget.png","Budget — Category Limits &amp; Tracking"],["assets/screenshots/add-income.png","Add Income — Quick Entry Screen"]]'>
+                <div class="gallery-stage">
+                  <button class="gallery-arrow gallery-prev" type="button" aria-label="Previous screenshot">‹</button>
+                  <img src="assets/screenshots/account-summary.png" alt="Personal Finance Account Summary screen" class="gallery-main" data-gallery-image>
+                  <button class="gallery-arrow gallery-next" type="button" aria-label="Next screenshot">›</button>
+                </div>
+                <div class="gallery-caption" data-gallery-caption>Account Summary — Balance &amp; Accounts</div>
+                <div class="gallery-dots" aria-label="Screenshot navigation">
+                  <button class="gallery-dot active" type="button" aria-label="Show account summary"></button>
+                  <button class="gallery-dot" type="button" aria-label="Show transactions"></button>
+                  <button class="gallery-dot" type="button" aria-label="Show budget"></button>
+                  <button class="gallery-dot" type="button" aria-label="Show add income"></button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 3: SpeakUp (AI-Powered Practice) -->
+        <article class="project reveal">
+          <div class="project-top">
+            <div>
+              <div class="project-badge-row">
+                <span class="project-badge">AI Voice Practice · Flutter Web</span>
+                <span class="project-badge">LLM Feedback</span>
+              </div>
+              <h3>SpeakUp</h3>
+              <p class="project-lead">
+                An AI-powered conversational application designed to help English learners and job candidates master spoken communication through structured interview preparation, real-time grammar feedback, and custom scenario roleplays.
+              </p>
+              <div class="feature-list">
+                <div class="feature">
+                  <strong>AI Interview Practice</strong>
+                  <span>Simulated technical &amp; behavioral question prompts</span>
+                </div>
+                <div class="feature">
+                  <strong>Answer Evaluation</strong>
+                  <span>Immediate scoring on clarity, tone &amp; relevance</span>
+                </div>
+                <div class="feature">
+                  <strong>Targeted Improvement</strong>
+                  <span>Identify weak answers and repeat until mastered</span>
+                </div>
+                <div class="feature">
+                  <strong>Custom Roleplays</strong>
+                  <span>Create custom situational practice scenarios</span>
+                </div>
+                <div class="feature">
+                  <strong>Conversational Audio UI</strong>
+                  <span>Microphone controls &amp; speech feedback state</span>
+                </div>
+                <div class="feature">
+                  <strong>Responsive Flutter Web</strong>
+                  <span>Fluid multi-platform UI optimized for web &amp; mobile</span>
+                </div>
+              </div>
+              <div class="contribution-box">
+                <strong>Core Highlights:</strong> Architected reactive dialogue turn-taking state flow, integrated AI evaluation APIs, structured prompt engineering pipelines, and crafted an accessible audio recording interface in Flutter.
+              </div>
+              <div class="project-links">
+                <a class="btn primary" href="https://speakup-8c867.web.app/" target="_blank" rel="noreferrer">Explore Live Demo ↗</a>
+              </div>
+            </div>
+            <div class="project-visual">
+              <div class="app-gallery" data-gallery data-project="SpeakUp" data-slides='[["assets/screenshots/speakup_1.png","Screenshot 1 of 4 — Practice Modes &amp; Progress"],["assets/screenshots/speakup_2.png","Screenshot 2 of 4 — Daily Voice Practice"],["assets/screenshots/speakup_3.png","Screenshot 3 of 4 — Role Play Scenario"],["assets/screenshots/speakup_4.png","Screenshot 4 of 4 — Custom Roleplay"]]'>
+                <div class="gallery-stage">
+                  <button class="gallery-arrow gallery-prev" type="button" aria-label="Previous screenshot">‹</button>
+                  <img src="assets/screenshots/speakup_1.png" alt="SpeakUp Screenshot 1 of 4 — Practice Modes &amp; Progress screen" class="gallery-main" data-gallery-image>
+                  <button class="gallery-arrow gallery-next" type="button" aria-label="Next screenshot">›</button>
+                </div>
+                <div class="gallery-caption" data-gallery-caption>Screenshot 1 of 4 — Practice Modes &amp; Progress</div>
+                <div class="gallery-dots" aria-label="Screenshot navigation">
+                  <button class="gallery-dot active" type="button" aria-label="Show screenshot 1"></button>
+                  <button class="gallery-dot" type="button" aria-label="Show screenshot 2"></button>
+                  <button class="gallery-dot" type="button" aria-label="Show screenshot 3"></button>
+                  <button class="gallery-dot" type="button" aria-label="Show screenshot 4"></button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 4: SyncLife (Productivity Application) -->
+        <article class="project reveal">
+          <div class="project-top">
+            <div>
+              <div class="project-badge-row">
+                <span class="project-badge">Productivity Suite · Flutter Web</span>
+                <span class="project-badge">Firebase Integration</span>
+              </div>
+              <h3>SyncLife</h3>
+              <p class="project-lead">
+                An all-in-one productivity suite unifying notes management, prioritize task lists, daily habit streak tracking, and long-term goal progression into a cohesive, context-switch-free mobile and web experience.
+              </p>
+              <div class="feature-list">
+                <div class="feature">
+                  <strong>Notes Management</strong>
+                  <span>Structured organization for daily thoughts &amp; plans</span>
+                </div>
+                <div class="feature">
+                  <strong>To-Do Checklists</strong>
+                  <span>Priority tagging &amp; deadline scheduling</span>
+                </div>
+                <div class="feature">
+                  <strong>Habit Streak Tracking</strong>
+                  <span>Routine building with completion streaks</span>
+                </div>
+                <div class="feature">
+                  <strong>Goal Progression</strong>
+                  <span>Milestone roadmaps for long-term objectives</span>
+                </div>
+                <div class="feature">
+                  <strong>Clean Architecture</strong>
+                  <span>Predictable unidirectional data flow</span>
+                </div>
+                <div class="feature">
+                  <strong>Firebase Backend</strong>
+                  <span>Secure user profiles &amp; cloud data sync</span>
+                </div>
+              </div>
+              <div class="contribution-box">
+                <strong>Core Highlights:</strong> Eliminated the fragmentation of running multiple single-purpose productivity apps by building a unified Flutter interface backed by Clean Architecture and offline-friendly data handling.
+              </div>
+              <div class="project-links">
+                <a class="btn primary" href="https://synclife-a9136.web.app/" target="_blank" rel="noreferrer">Explore Live Demo ↗</a>
+              </div>
+            </div>
+            <div class="project-visual">
+              <div class="app-gallery" data-gallery data-project="SyncLife" data-slides='[["assets/screenshots/synclife_1.png","Screenshot 1 of 3 — Notes &amp; Task Management"],["assets/screenshots/synclife_2.png","Screenshot 2 of 3 — Daily Habit Streaks"],["assets/screenshots/synclife_3.png","Screenshot 3 of 3 — Long-Term Goal Tracking"]]'>
+                <div class="gallery-stage">
+                  <button class="gallery-arrow gallery-prev" type="button" aria-label="Previous screenshot">‹</button>
+                  <img src="assets/screenshots/synclife_1.png" alt="SyncLife Screenshot 1 of 3 — Notes &amp; Task Management screen" class="gallery-main" data-gallery-image>
+                  <button class="gallery-arrow gallery-next" type="button" aria-label="Next screenshot">›</button>
+                </div>
+                <div class="gallery-caption" data-gallery-caption>Screenshot 1 of 3 — Notes &amp; Task Management</div>
+                <div class="gallery-dots" aria-label="Screenshot navigation">
+                  <button class="gallery-dot active" type="button" aria-label="Show screenshot 1"></button>
+                  <button class="gallery-dot" type="button" aria-label="Show screenshot 2"></button>
+                  <button class="gallery-dot" type="button" aria-label="Show screenshot 3"></button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 5: NexCart (E-Commerce Application) -->
+        <article class="project reveal">
+          <div class="project-top">
+            <div>
+              <div class="project-badge-row">
+                <span class="project-badge">E-Commerce · Flutter</span>
+                <span class="project-badge">Clean Architecture</span>
+              </div>
+              <h3>NexCart</h3>
+              <p class="project-lead">
+                A modern e-commerce mobile application demonstrating retail product discovery, catalogue filtering, detailed product specifications, and reactive shopping cart state management.
+              </p>
+              <div class="feature-list">
+                <div class="feature">
+                  <strong>Product Discovery</strong>
+                  <span>Smooth multi-category grid and banner browsing</span>
+                </div>
+                <div class="feature">
+                  <strong>Product Details</strong>
+                  <span>High-resolution imagery, pricing &amp; specifications</span>
+                </div>
+                <div class="feature">
+                  <strong>Real-Time Cart Flow</strong>
+                  <span>Immediate quantity updates and total computation</span>
+                </div>
+                <div class="feature">
+                  <strong>Scalable State Flow</strong>
+                  <span>Decoupled cart state synced across screens</span>
+                </div>
+                <div class="feature">
+                  <strong>Layered Architecture</strong>
+                  <span>Clean separation of Domain, Data, and Presentation</span>
+                </div>
+                <div class="feature">
+                  <strong>Component Reusability</strong>
+                  <span>Modular cards, buttons &amp; quantity selectors</span>
+                </div>
+              </div>
+              <div class="contribution-box">
+                <strong>Core Highlights:</strong> Showcases best practices in Flutter UI component reusability, navigation flow, responsive shopping layout, and predictable state synchronization for commercial mobile applications.
+              </div>
+              <div class="project-links">
+                <span class="badge-status" style="display:inline-block; padding:8px 16px; border-radius:9999px; background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); font-size:0.85rem; color:#94a3b8;">Commercial Reference Architecture</span>
+              </div>
+            </div>
+            <div class="project-visual">
+              <div class="app-gallery" data-gallery data-project="NexCart" data-slides='[["assets/screenshots/nexcart_1.png","Screenshot 1 of 3 — Product Catalog Discovery"],["assets/screenshots/nexcart_2.png","Screenshot 2 of 3 — Product Details &amp; Specifications"],["assets/screenshots/nexcart_3.png","Screenshot 3 of 3 — Shopping Cart &amp; Checkout Flow"]]'>
+                <div class="gallery-stage">
+                  <button class="gallery-arrow gallery-prev" type="button" aria-label="Previous screenshot">‹</button>
+                  <img src="assets/screenshots/nexcart_1.png" alt="NexCart Screenshot 1 of 3 — Product Catalog Discovery screen" class="gallery-main" data-gallery-image>
+                  <button class="gallery-arrow gallery-next" type="button" aria-label="Next screenshot">›</button>
+                </div>
+                <div class="gallery-caption" data-gallery-caption>Screenshot 1 of 3 — Product Catalog Discovery</div>
+                <div class="gallery-dots" aria-label="Screenshot navigation">
+                  <button class="gallery-dot active" type="button" aria-label="Show screenshot 1"></button>
+                  <button class="gallery-dot" type="button" aria-label="Show screenshot 2"></button>
+                  <button class="gallery-dot" type="button" aria-label="Show screenshot 3"></button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- 6. TradeDemo (Technical Assignment) -->
+        <article class="project reveal">
+          <div class="project-top">
+            <div>
+              <span class="project-badge">Fintech · Technical Assignment Demo</span>
+              <h3>TradeDemo (TradeFlow)</h3>
+              <p>
+                A simulated financial trading application developed as an advanced technical assignment, demonstrating live market data visualization, order execution workflows, and portfolio performance tracking.
+              </p>
+              <div class="feature-list">
+                <div class="feature">
+                  <strong>Simulated Trading</strong>
+                  <span>Order placement &amp; trade execution workflows</span>
+                </div>
+                <div class="feature">
+                  <strong>Market Visualizations</strong>
+                  <span>Financial charts, pricing trends, &amp; market tickers</span>
+                </div>
+                <div class="feature">
+                  <strong>Portfolio Tracking</strong>
+                  <span>Real-time balance, open positions, &amp; P&amp;L views</span>
+                </div>
+                <div class="feature">
+                  <strong>Clean Architecture</strong>
+                  <span>Strict separation of Domain, Data, and Presentation</span>
+                </div>
+                <div class="feature">
+                  <strong>Reactive State Flow</strong>
+                  <span>Synchronized market updates &amp; position handling</span>
+                </div>
+                <div class="feature">
+                  <strong>Dark Financial UI</strong>
+                  <span>High-contrast trading interface optimized for mobile</span>
+                </div>
+              </div>
+              <div class="contribution-box">
+                <strong>Technical Assignment:</strong> Implemented adhering to strict technical guidelines and architectural patterns, showcasing clean state flow, responsive layout, and robust data simulation.
+              </div>
+              <div class="project-links">
+                <a class="btn primary" href="https://github.com/pravinshendkar" target="_blank" rel="noreferrer">GitHub Repository ↗</a>
+              </div>
+            </div>
+            <div class="project-visual">
+              <div class="app-gallery" data-gallery data-project="TradeDemo" data-slides='[["assets/videos/TradeFlow%20demo.mp4","Video Walkthrough — Live App Demo","video"],["assets/screenshots/tradeflow_1.png","Screenshot 1 of 3 — Portfolio Holdings &amp; Analytics"],["assets/screenshots/tradeflow_2.png","Screenshot 2 of 3 — Custom Watchlists"],["assets/screenshots/tradeflow_3.png","Screenshot 3 of 3 — Live Market Feed"]]'>
+                <div class="gallery-stage">
+                  <button class="gallery-arrow gallery-prev" type="button" aria-label="Previous screenshot">‹</button>
+                  <video src="assets/videos/TradeFlow%20demo.mp4" class="gallery-main" data-gallery-video autoplay loop muted playsinline controls style="background:#000"></video>
+                  <img src="assets/screenshots/tradeflow_1.png" alt="TradeDemo Screenshot 1 of 3 — Portfolio Holdings &amp; Analytics screen" class="gallery-main" data-gallery-image style="display:none">
+                  <button class="gallery-arrow gallery-next" type="button" aria-label="Next screenshot">›</button>
+                </div>
+                <div class="gallery-caption" data-gallery-caption>Video Walkthrough — Live App Demo</div>
+                <div class="gallery-dots" aria-label="Screenshot navigation">
+                  <button class="gallery-dot active" type="button" aria-label="Show video walkthrough"></button>
+                  <button class="gallery-dot" type="button" aria-label="Show screenshot 1"></button>
+                  <button class="gallery-dot" type="button" aria-label="Show screenshot 2"></button>
+                  <button class="gallery-dot" type="button" aria-label="Show screenshot 3"></button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Engineering Pillars -->
+    <section>
+      <div class="container">
+        <div class="reveal">
+          <div class="section-kicker">Core Principles</div>
+          <h2 class="section-title">How I build mobile software.</h2>
+        </div>
+        <div class="pillar-cards">
+          <article class="pillar-card reveal">
+            <div class="pillar-kicker">Architecture &amp; Modularity</div>
+            <h3>Clean Architecture</h3>
+            <p>
+              Strict separation between Presentation, Domain (Entities, Use Cases), and Data (Repositories, Data Sources). Feature-first modular organization that scales gracefully across multiple squads without circular dependencies.
+            </p>
+          </article>
+          <article class="pillar-card reveal">
+            <div class="pillar-kicker">Reliability &amp; Testing</div>
+            <h3>Predictable State</h3>
+            <p>
+              Adopting BLoC/Cubit for explicit, immutable states and unidirectional data flow. Code designed for testability, thorough unit tests for use cases and state transitions, and robust crash analytics tracking.
+            </p>
+          </article>
+          <article class="pillar-card reveal">
+            <div class="pillar-kicker">Production Execution</div>
+            <h3>End-to-End Delivery</h3>
+            <p>
+              Experienced in taking ideas from product specs to Google Play &amp; App Store release. Integrating native SDKs, handling offline synchronization (Hive/SQLite), and automating deployment via CI/CD pipelines.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+      <div class="container">
+        <div class="contact reveal">
+          <div class="section-kicker">05 — Let's Connect</div>
+          <h2>Looking for a Senior Flutter Developer?</h2>
+          <p>
+            I am actively open to Senior Flutter Developer opportunities as well as high-impact freelance &amp; contract projects. Whether you need an experienced engineer to architect a new mobile app from scratch, lead feature delivery, or scale a production codebase, let's connect.
+          </p>
+          
+          <div class="contact-details">
+            <span class="contact-badge">📍 Navi Mumbai, India</span>
+            <span class="contact-badge">📧 pravinshendkar24@gmail.com</span>
+            <span class="contact-badge">📱 +91 9768711594</span>
+            <span class="contact-badge">🌐 Full-Time &amp; Freelance · Remote / Hybrid</span>
+          </div>
+
+          <div class="contact-row">
+            <a class="btn primary" href="mailto:pravinshendkar24@gmail.com">Email Me ↗</a>
+            <a class="btn" href="tel:+919768711594">Call / WhatsApp ↗</a>
+            <a class="btn" href="https://www.linkedin.com/in/pravin-shendkar-flutter-developer/" target="_blank" rel="noreferrer">LinkedIn ↗</a>
+            <a class="btn" href="https://github.com/pravinshendkar" target="_blank" rel="noreferrer">GitHub ↗</a>
+            <a class="btn accent" href="assets/Pravin-Shendkar-Resume.pdf" target="_blank">Download Resume (PDF) ↗</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer">
+      <div>© 2026 Pravin Shendkar · Senior Flutter Developer</div>
+      <div>Navi Mumbai, India · Built with modern responsive web standards</div>
+    </div>
+  </footer>
+
+  <script>
+    // Automated Cache-Buster
+    const buildVersion = Date.now();
+    const withCacheBust = url => {
+      if (!url) return url;
+      const clean = url.split('?')[0];
+      return `${clean}?v=${buildVersion}`;
+    };
+
+    // Attach cache buster to PDF resume links
+    document.querySelectorAll('a[href$=".pdf"]').forEach(a => {
+      a.href = withCacheBust(a.getAttribute('href'));
+    });
+
+    // Mobile nav toggle
+    const navToggle = document.getElementById('navToggle');
+    const navLinks = document.getElementById('navLinks');
+    if (navToggle && navLinks) {
+      navToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('open');
+      });
+      navLinks.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => navLinks.classList.remove('open'));
+      });
+    }
+
+    // Scroll reveal observer
+    if ('IntersectionObserver' in window) {
+      const io = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      }, { threshold: 0.05, rootMargin: '0px 0px 80px 0px' });
+      document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+      // Safety net: reveal all elements after timeout in case scroll observation is bypassed
+      setTimeout(() => {
+        document.querySelectorAll('.reveal:not(.visible)').forEach(el => el.classList.add('visible'));
+      }, 1000);
+    } else {
+      document.querySelectorAll('.reveal').forEach(el => el.classList.add('visible'));
+    }
+
+    // Interactive Phone Screenshot & Video Galleries
+    document.querySelectorAll('[data-gallery]').forEach(gallery => {
+      const image = gallery.querySelector('[data-gallery-image]');
+      const video = gallery.querySelector('[data-gallery-video]');
+      const caption = gallery.querySelector('[data-gallery-caption]');
+      const dots = [...gallery.querySelectorAll('.gallery-dot')];
+      const projectName = gallery.getAttribute('data-project') || 'Project';
+
+      let slides = [];
+      if (gallery.dataset.slides) {
+        try { slides = JSON.parse(gallery.dataset.slides); } catch (e) { slides = []; }
+      }
+      if (!slides.length) return;
+
+      if (video && video.getAttribute('src')) {
+        video.src = withCacheBust(video.getAttribute('src'));
+      }
+      if (image && image.getAttribute('src')) {
+        image.src = withCacheBust(image.getAttribute('src'));
+      }
+
+      let index = 0;
+      const showSlide = i => {
+        index = (i + slides.length) % slides.length;
+        const currentSlide = slides[index];
+        const isVideo = currentSlide[2] === 'video' || (currentSlide[0] && currentSlide[0].endsWith('.mp4'));
+        const activeMedia = isVideo ? video : image;
+        const inactiveMedia = isVideo ? image : video;
+
+        if (inactiveMedia) {
+          inactiveMedia.style.opacity = '0';
+          if (inactiveMedia === video) video.pause();
+        }
+        if (activeMedia) {
+          activeMedia.style.opacity = '0';
+          activeMedia.style.transform = 'scale(.985)';
+        }
+
+        setTimeout(() => {
+          if (inactiveMedia) inactiveMedia.style.display = 'none';
+          if (activeMedia) {
+            activeMedia.style.display = 'block';
+            if (isVideo) {
+              if (video && !video.src.includes(currentSlide[0].split('?')[0])) {
+                video.src = withCacheBust(currentSlide[0]);
+              }
+              if (video) video.play().catch(() => {});
+            } else {
+              if (image) {
+                image.src = withCacheBust(currentSlide[0]);
+                image.alt = `${projectName} ${currentSlide[1]} screen`;
+              }
+            }
+            if (caption) caption.textContent = currentSlide[1];
+            dots.forEach((dot, n) => dot.classList.toggle('active', n === index));
+            activeMedia.style.opacity = '1';
+            activeMedia.style.transform = 'scale(1)';
+          }
+        }, 120);
+      };
+
+      const prevBtn = gallery.querySelector('.gallery-prev');
+      const nextBtn = gallery.querySelector('.gallery-next');
+      if (prevBtn) prevBtn.addEventListener('click', () => showSlide(index - 1));
+      if (nextBtn) nextBtn.addEventListener('click', () => showSlide(index + 1));
+      dots.forEach((dot, n) => dot.addEventListener('click', () => showSlide(n)));
+
+      // Touch swipe gestures
+      let startX = 0;
+      let startY = 0;
+      gallery.addEventListener('touchstart', e => {
+        if (e.changedTouches && e.changedTouches.length) {
+          startX = e.changedTouches[0].clientX;
+          startY = e.changedTouches[0].clientY;
+        }
+      }, { passive: true });
+
+      gallery.addEventListener('touchend', e => {
+        if (e.changedTouches && e.changedTouches.length) {
+          const deltaX = e.changedTouches[0].clientX - startX;
+          const deltaY = e.changedTouches[0].clientY - startY;
+          if (Math.abs(deltaX) > 40 && Math.abs(deltaX) > Math.abs(deltaY)) {
+            showSlide(index + (deltaX < 0 ? 1 : -1));
+          }
+        }
+      }, { passive: true });
+    });
+  </script>
+</body>
+</html>
