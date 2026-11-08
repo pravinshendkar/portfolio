@@ -13,12 +13,11 @@ GitHub Pages-ready portfolio for Pravin Shendkar, Senior Flutter Developer.
 
 ## Featured Projects
 
-1. **Personal Finance** — Privacy-first personal finance app for budgeting, expenses, investments, and loans. Offline-only architecture with Hive and biometric security.
-2. **SyncLife** — All-in-one productivity application featuring notes, to-do lists, habit tracking, and goal tracking in a clean, unified Flutter experience.
-3. **SpeakUp** — AI-powered English-speaking practice application with Free Speak mode, guided conversations on diverse topics, and real-time grammar checking.
-4. **NexCart** — E-commerce application demonstrating catalog browsing, product discovery, shopping cart flows, and modern Flutter development practices.
-5. **TradeFlow** — Simulated trading application developed as a technical coding assignment, showcasing market data visualization, order execution workflows, and portfolio tracking.
-6. **Momentum Insure** — Customer-facing short-term insurance and road-safety features within the Momentum App (500K+ downloads, 20K+ active users).
+1. **Momentum App** — Customer-facing short-term insurance and road-safety mobile platform (500K+ downloads, 20K+ active safety users).
+2. **Personal Finance Tracker** — Published independent Android app for budgeting, expenses, investments, and loans. Offline-first architecture with Hive and biometric security.
+3. **SpeakUp** — AI-powered English-speaking and interview practice web application with simulated questions, answer evaluation, and real-time grammar feedback.
+4. **SyncLife** — All-in-one productivity suite featuring notes, to-do lists, habit tracking, and goal progression in a clean, unified Flutter experience.
+5. **NexCart** — E-commerce application demonstrating catalog browsing, product discovery, shopping cart flows, and modern Flutter development practices.
 
 ## Screenshot Asset Naming Conventions
 
@@ -29,25 +28,19 @@ All screenshots are stored in `assets/screenshots/`. Project carousels follow th
   - `assets/screenshots/transactions.png` (Slide 2: Transactions)
   - `assets/screenshots/budget.png` (Slide 3: Budget)
   - `assets/screenshots/add-income.png` (Slide 4: Add income)
-- **SyncLife:**
-  - `assets/screenshots/synclife_1.png` (Slide 1: Notes & Tasks)
-  - `assets/screenshots/synclife_2.png` (Slide 2: Habit Tracker)
-  - `assets/screenshots/synclife_3.png` (Slide 3: Goal Tracking)
 - **SpeakUp:**
   - `assets/screenshots/speakup_1.png` (Slide 1: Practice Modes & Progress)
   - `assets/screenshots/speakup_2.png` (Slide 2: Daily Voice Practice)
   - `assets/screenshots/speakup_3.png` (Slide 3: Role Play Scenario)
   - `assets/screenshots/speakup_4.png` (Slide 4: Custom Roleplay)
+- **SyncLife:**
+  - `assets/screenshots/synclife_1.png` (Slide 1: Notes & Tasks)
+  - `assets/screenshots/synclife_2.png` (Slide 2: Habit Tracker)
+  - `assets/screenshots/synclife_3.png` (Slide 3: Goal Tracking)
 - **NexCart:**
   - `assets/screenshots/nexcart_1.png` (Slide 1: Product Catalog)
   - `assets/screenshots/nexcart_2.png` (Slide 2: Product Details)
   - `assets/screenshots/nexcart_3.png` (Slide 3: Shopping Cart)
-  *(Note: `nxtcart_{1,2,3}.png` are maintained as aliases for compatibility)*
-- **TradeFlow:**
-  - `assets/videos/TradeFlow demo.mp4` (Slide 1: Video Walkthrough)
-  - `assets/screenshots/tradeflow_1.png` (Slide 2: Portfolio Holdings & Analytics)
-  - `assets/screenshots/tradeflow_2.png` (Slide 3: Custom Watchlists)
-  - `assets/screenshots/tradeflow_3.png` (Slide 4: Live Market Feed)
 
 ## Customize
 
@@ -55,4 +48,3 @@ All screenshots are stored in `assets/screenshots/`. Project carousels follow th
 - Screenshot gallery assets: `assets/screenshots/`
 - Main page: `index.html`
 - GitHub: `https://github.com/pravinshendkar`
-
