@@ -419,6 +419,135 @@
       font-weight: 600;
     }
 
+    /* Visual Tech Stack Showcase (Hero Badges & Domain Cards) */
+    .tech-stack-showcase {
+      margin-bottom: 48px;
+    }
+    .tech-badges-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 34px;
+    }
+    .tech-badges-row-primary {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+    }
+    .tech-badges-row-secondary {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+    }
+    .tech-badge-lg {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 22px;
+      background: #0f131f;
+      border: 1px solid rgba(255, 255, 255, 0.09);
+      border-radius: 9999px;
+      color: #fff;
+      font-size: 1.02rem;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.35);
+      cursor: default;
+    }
+    .tech-badge-lg:hover {
+      transform: translateY(-2px);
+      border-color: rgba(139, 109, 255, 0.45);
+      box-shadow: 0 8px 26px rgba(139, 109, 255, 0.2);
+      background: #141929;
+    }
+    .tech-badge-lg svg {
+      width: 24px;
+      height: 24px;
+      flex-shrink: 0;
+    }
+    .tech-badge-sm {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 15px;
+      background: rgba(15, 19, 31, 0.75);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 9999px;
+      color: #94a3b8;
+      font-size: 0.86rem;
+      font-weight: 500;
+      transition: all 0.2s ease;
+      cursor: default;
+    }
+    .tech-badge-sm:hover {
+      color: #fff;
+      border-color: rgba(255, 255, 255, 0.16);
+      background: rgba(22, 28, 46, 0.85);
+      transform: translateY(-1px);
+    }
+    .tech-badge-sm svg {
+      width: 16px;
+      height: 16px;
+      flex-shrink: 0;
+    }
+
+    /* 4 Domain Focus Cards */
+    .domain-cards {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+    .domain-card {
+      background: #0d111d;
+      border: 1px solid rgba(255, 255, 255, 0.07);
+      border-radius: 14px;
+      padding: 22px 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      transition: all 0.25s ease;
+    }
+    .domain-card:hover {
+      border-color: rgba(139, 109, 255, 0.35);
+      transform: translateY(-3px);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+      background: #111626;
+    }
+    .domain-card-title {
+      font-size: 0.98rem;
+      font-weight: 700;
+      color: #fff;
+      letter-spacing: -0.01em;
+    }
+    .domain-card-desc {
+      font-size: 0.86rem;
+      color: #94a3b8;
+      line-height: 1.55;
+      margin: 0;
+    }
+    .domain-card-desc strong {
+      color: #e2e8f0;
+      font-weight: 600;
+    }
+    .domain-tagline {
+      margin-top: 22px;
+      text-align: center;
+      padding: 12px 18px;
+      background: rgba(139, 109, 255, 0.05);
+      border: 1px dashed rgba(139, 109, 255, 0.25);
+      border-radius: 10px;
+      color: #cbd5e1;
+      font-size: 0.9rem;
+    }
+    .domain-tagline span {
+      color: var(--primary-light, #a78bfa);
+      font-weight: 600;
+    }
+
     /* Experience Timeline */
     .timeline {
       position: relative;
@@ -909,6 +1038,7 @@
       .project-top { grid-template-columns: 1fr; gap: 30px; padding: 28px; }
       .about-grid { grid-template-columns: 1fr; gap: 32px; }
       .skills-categories { grid-template-columns: 1fr 1fr; }
+      .domain-cards { grid-template-columns: 1fr 1fr; }
       .stats { grid-template-columns: 1fr 1fr; }
       .pillar-cards { grid-template-columns: 1fr; }
     }
@@ -932,6 +1062,8 @@
     }
     @media (max-width: 600px) {
       .skills-categories { grid-template-columns: 1fr; }
+      .domain-cards { grid-template-columns: 1fr; }
+      .tech-badge-lg { padding: 10px 16px; font-size: 0.94rem; }
       .stats { grid-template-columns: 1fr; }
       .feature-list { grid-template-columns: 1fr; }
       .gallery-prev { left: -16px; }
@@ -966,7 +1098,7 @@
     <section class="hero">
       <div class="container reveal">
         <div class="availability-badge">
-          <span class="pulse-dot"></span> Available for Senior Flutter Roles
+          <span class="pulse-dot"></span> Available Immediately · Senior Roles &amp; Freelance Projects
         </div>
         <div class="hero-role">Senior Flutter Developer · Mobile Architect</div>
         <h1>
@@ -977,7 +1109,7 @@
         </p>
 
         <div class="hero-meta-pills">
-          <span class="meta-pill">📍 Panvel, Navi Mumbai, India</span>
+          <span class="meta-pill">📍 Navi Mumbai, India</span>
           <span class="meta-pill">🎓 B.E. Computer Engineering</span>
           <span class="meta-pill">☁️ AWS Certified Cloud Practitioner</span>
           <span class="meta-pill">🛡️ 20K+ Safety Users Supported</span>
@@ -1030,11 +1162,20 @@
           </div>
 
           <div class="value-card reveal">
-            <h3>Recruiter Quick Facts</h3>
+            <div class="quick-facts-badge">Overview</div>
+            <h3>Quick Summary</h3>
             <div class="value-list">
               <div class="value-item">
                 <span class="value-icon">✓</span>
-                <div><strong>Current Role:</strong> Senior Engineer at Momentum Services Pvt Ltd</div>
+                <div><strong>Status:</strong> Immediate Joiner · Resigned (LWD: 30th Sept 2024 · Notice Period Completed)</div>
+              </div>
+              <div class="value-item">
+                <span class="value-icon">✓</span>
+                <div><strong>Open To:</strong> Full-Time Senior Roles &amp; Freelance / Contract Projects</div>
+              </div>
+              <div class="value-item">
+                <span class="value-icon">✓</span>
+                <div><strong>Recent Role:</strong> Senior Engineer at Momentum Services Pvt Ltd (Nov 2022 – Sep 2024)</div>
               </div>
               <div class="value-item">
                 <span class="value-icon">✓</span>
@@ -1050,11 +1191,7 @@
               </div>
               <div class="value-item">
                 <span class="value-icon">✓</span>
-                <div><strong>Location:</strong> Panvel, Navi Mumbai (Open to Remote &amp; Hybrid)</div>
-              </div>
-              <div class="value-item">
-                <span class="value-icon">✓</span>
-                <div><strong>Availability:</strong> Ready for new senior mobile challenges</div>
+                <div><strong>Location:</strong> Navi Mumbai, India (Open to Remote, Hybrid &amp; Relocation)</div>
               </div>
             </div>
           </div>
@@ -1071,6 +1208,129 @@
           <p class="section-copy">
             A comprehensive, categorized breakdown of the technologies, architectural patterns, and engineering practices I employ to build scalable mobile software.
           </p>
+        </div>
+
+        <!-- Visual Tech Stack Showcase (Hero Badges & Domain Cards) -->
+        <div class="tech-stack-showcase reveal">
+          <div class="tech-badges-container">
+            <!-- Primary Core Badges -->
+            <div class="tech-badges-row-primary">
+              <div class="tech-badge-lg" title="Flutter — 6+ Years Experience">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <path d="M14.314 0L2.3 12 6.07 15.772 21.859 0h-7.545z" fill="#42A5F5"/>
+                  <path d="M14.314 12.029L8.3 18.043 12.07 21.815 21.859 12.029h-7.545z" fill="#0D47A1"/>
+                  <path d="M6.07 15.772L9.842 12l3.772 3.772-3.772 3.772L6.07 15.772z" fill="#29B6F6"/>
+                </svg>
+                <span>Flutter</span>
+              </div>
+              <div class="tech-badge-lg" title="Android SDK &amp; Ecosystem">
+                <svg viewBox="0 0 24 24" fill="#3DDC84">
+                  <path d="M6 18c0 .55.45 1 1 1h1v3.5c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5V19h2v3.5c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5V19h1c.55 0 1-.45 1-1V8H6v10zM3.5 8C2.67 8 2 8.67 2 9.5v7c0 .83.67 1.5 1.5 1.5S5 17.33 5 16.5v-7C5 8.67 4.33 8 3.5 8zm17 0c-.83 0-1.5.67-1.5 1.5v7c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5v-7c0-.83-.67-1.5-1.5-1.5zm-4.97-4.84l1.3-1.3c.2-.2.2-.51 0-.71-.2-.2-.51-.2-.71 0l-1.48 1.48C13.85 2.23 12.95 2 12 2c-.96 0-1.86.23-2.66.63L7.85.15c-.2-.2-.51-.2-.71 0-.2.2-.2.51 0 .71l1.31 1.31C6.97 3.26 6 5.01 6 7h12c0-1.99-.97-3.75-2.47-4.84zM10 5H9V4h1v1zm5 0h-1V4h1v1z"/>
+                </svg>
+                <span>Android</span>
+              </div>
+              <div class="tech-badge-lg" title="Kotlin Native Android Development">
+                <svg viewBox="0 0 24 24">
+                  <path d="M24 24H0V0h24L12 12Z" fill="#7F52FF"/>
+                  <path d="M0 24L12 12 24 24Z" fill="#C711E1"/>
+                  <path d="M0 0l12 12L0 24Z" fill="#E4485D"/>
+                </svg>
+                <span>Kotlin</span>
+              </div>
+              <div class="tech-badge-lg" title="Dart Language">
+                <svg viewBox="0 0 24 24">
+                  <path d="M4.1 3.5L12 2l8.5 4.5L22 17l-9.5 5L4.1 17.5V3.5z" fill="#00B4AB"/>
+                  <path d="M4.1 3.5L12 2v20l-7.9-4.5V3.5z" fill="#0175C2"/>
+                  <path d="M12 2l8.5 4.5-3.8 11.2L12 22V2z" fill="#55BFE4"/>
+                </svg>
+                <span>Dart</span>
+              </div>
+              <div class="tech-badge-lg" title="Firebase Backend &amp; Cloud Services">
+                <svg viewBox="0 0 24 24">
+                  <path d="M3.9 18.5L7.5 3.3c.1-.5.7-.7 1-.3l3.6 6.8L3.9 18.5z" fill="#FFA000"/>
+                  <path d="M14.2 9.8l2.2-4.2c.3-.5 1-.4 1.2.2L20.1 18.5 14.2 9.8z" fill="#F57C00"/>
+                  <path d="M20.1 18.5l-8.1 4.5c-.3.2-.7.2-1 0L3.9 18.5 12 1.3c.3-.5 1-.5 1.3 0l6.8 17.2z" fill="#FFCA28"/>
+                </svg>
+                <span>Firebase</span>
+              </div>
+            </div>
+
+            <!-- Secondary Ecosystem Badges -->
+            <div class="tech-badges-row-secondary">
+              <div class="tech-badge-sm">
+                <svg viewBox="0 0 24 24" fill="#f89820"><path d="M8.8 16.5c0 .3.3.6.8.8 1.4.5 3 .6 4.6.6 2.3 0 4.1-.3 5.4-1.2-2.3.2-4.5.3-6.8.2-1.8-.1-3.4-.3-4-.4zm-1.2 2.6c1.5.3 3.3.4 5.2.4 2.4 0 4.6-.2 6.5-.8-.8.6-2.6 1.1-5.7 1.1-2.4 0-4.4-.3-6-.7zm10.7-5.5c2.3-.9 3.2-2.2 3.2-3.4 0-1.5-1.2-2.7-3.2-3.1.4.7.5 1.5.3 2.3-.4 1.4-1.6 2.5-3.5 3.1 1.4.3 2.4.6 3.2 1.1z"/></svg>
+                <span>Java</span>
+              </div>
+              <div class="tech-badge-sm">
+                <svg viewBox="0 0 24 24" fill="#29B6F6"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                <span>BLoC &amp; Cubit</span>
+              </div>
+              <div class="tech-badge-sm">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#2dd4bf" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+                <span>Clean Architecture</span>
+              </div>
+              <div class="tech-badge-sm">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 14.899A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 2.5 8.242"/><path d="M8 19h8"/><path d="M12 15v6"/></svg>
+                <span>REST APIs</span>
+              </div>
+              <div class="tech-badge-sm">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
+                <span>SQLite &amp; Hive</span>
+              </div>
+              <div class="tech-badge-sm">
+                <svg viewBox="0 0 24 24" fill="#3395FF"><path d="M14.5 2H4L2 22h5l1.5-6h4.5c4.7 0 8.5-3.6 8.5-7s-3.3-7-7-7zm-.5 8.5h-4l1.2-4.5h3c1.7 0 3 1 3 2.3s-1.3 2.2-3.2 2.2z"/></svg>
+                <span>Razorpay</span>
+              </div>
+              <div class="tech-badge-sm">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#f43f5e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                <span>Flutter Web</span>
+              </div>
+              <div class="tech-badge-sm">
+                <svg viewBox="0 0 24 24" fill="#00E676"><path d="M3.6 1.8c-.4.4-.6 1-.6 1.8v16.8c0 .8.2 1.4.6 1.8l.1.1 9.4-9.4v-.2L3.7 1.7l-.1.1zM16.7 15.3l-3.6-3.6 3.6-3.6 4.1 2.3c1.2.7 1.2 1.8 0 2.5l-4.1 2.4zM13.1 11.7L3.7 2.3l8.3 8.3 1.1 1.1zM13.1 12.3l-9.4 9.4 9.4-9.4z"/></svg>
+                <span>Google Play</span>
+              </div>
+              <div class="tech-badge-sm">
+                <svg viewBox="0 0 24 24" fill="#A2AAAD"><path d="M18.7 19.5c-.8 1.2-1.7 2.4-3 2.5-1.3.1-1.8-.8-3.3-.8-1.5 0-2 .8-3.3.8-1.3 0-2.3-1.3-3.1-2.5-1.7-2.4-3-6.9-1.2-9.9 1-1.6 2.6-2.6 4.3-2.6 1.3 0 2.5.9 3.3.9.8 0 2.3-1.1 3.9-.9 1.4.1 2.6.7 3.3 1.7-3.1 1.7-2.6 6.1.4 7.3-.6 1.3-1.3 2.6-2.3 3.5zm-4.3-16c.7-.9 1.2-2.1 1-3.5-1.1.1-2.4.8-3.1 1.7-.6.7-1.2 2-1 3.3 1.2.1 2.4-.6 3.1-1.5z"/></svg>
+                <span>App Store</span>
+              </div>
+              <div class="tech-badge-sm">
+                <svg viewBox="0 0 24 24" fill="#F05032"><path d="M21.6 10.9L13.1 2.4c-.6-.6-1.5-.6-2.1 0L8.9 4.5l2.7 2.7c.6-.2 1.4 0 1.9.5.5.5.7 1.3.5 1.9l2.6 2.6c.6-.2 1.4 0 1.9.5.8.8.8 2 0 2.8-.8.8-2 .8-2.8 0-.6-.6-.7-1.4-.5-2.1l-2.4-2.4v5.3c.2.2.4.4.5.7.5.8.3 1.9-.5 2.5-.8.5-1.9.3-2.5-.5-.5-.8-.3-1.9.5-2.5.3-.2.6-.3.9-.3V9.1c-.3 0-.6-.1-.9-.3-.8-.5-1-1.6-.5-2.5.4-.6 1-.9 1.6-.9L8.1 3.7 2.4 9.4c-.6.6-.6 1.5 0 2.1l8.5 8.5c.6.6 1.5.6 2.1 0l8.5-8.5c.6-.6.6-1.6.1-2.2z"/></svg>
+                <span>Git &amp; CI/CD</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- 4 Core Domain Focus Cards (Matching Reference Layout) -->
+          <div class="domain-cards">
+            <div class="domain-card">
+              <div class="domain-card-title">Mobile apps</div>
+              <p class="domain-card-desc">
+                <strong>Flutter &amp; Android</strong> — architecture, APIs, Firebase, and the direct path from technical plan to Google Play &amp; App Store listing.
+              </p>
+            </div>
+            <div class="domain-card">
+              <div class="domain-card-title">Web &amp; admin</div>
+              <p class="domain-card-desc">
+                <strong>Flutter web admin</strong>, dashboards, and responsive marketing/admin portals when the product needs cross-platform parity.
+              </p>
+            </div>
+            <div class="domain-card">
+              <div class="domain-card-title">Native hard parts</div>
+              <p class="domain-card-desc">
+                <strong>GPS &amp; telematics, biometrics</strong>, local encryption, background services, payment gateways, video, push, and offline-first data.
+              </p>
+            </div>
+            <div class="domain-card">
+              <div class="domain-card-title">Freelance delivery</div>
+              <p class="domain-card-desc">
+                <strong>Scope &amp; architecture</strong>, team mentorship, rigorous code reviews, RCA, client communication, and reliable production releases.
+              </p>
+            </div>
+          </div>
+
+          <div class="domain-tagline">
+            <span>Java · Kotlin · Flutter · Dart · Lead Engineering</span> — Flutter-first for apps, with native depth, clean modular architecture, and reliable delivery across 20K+ active users.
+          </div>
         </div>
 
         <div class="skills-categories">
@@ -1201,7 +1461,7 @@
                     <span class="job-tag" style="color:#5eead4; border-color:rgba(45,212,191,0.4);">Featured Enterprise Production</span>
                   </div>
                 </div>
-                <div class="job-date">Nov 2022 — Sep 2026</div>
+                <div class="job-date">Nov 2022 — Sep 2024 (LWD: 30th Sep 2024)</div>
               </div>
               <ul>
                 <li>
@@ -1480,7 +1740,6 @@
               <div class="project-links">
                 <a class="btn primary" href="https://personal-finance-ebf6a.firebaseapp.com/" target="_blank" rel="noreferrer">Explore Live Demo ↗</a>
                 <a class="btn" href="https://play.google.com/store/apps/details?id=io.github.pravinshendkar.personalfinance" target="_blank" rel="noreferrer">Google Play Store ↗</a>
-                <a class="btn" href="https://github.com/pravinshendkar" target="_blank" rel="noreferrer">GitHub Repository ↗</a>
               </div>
             </div>
             <div class="project-visual">
@@ -1545,7 +1804,6 @@
               </div>
               <div class="project-links">
                 <a class="btn primary" href="https://speakup-8c867.web.app/" target="_blank" rel="noreferrer">Explore Live Demo ↗</a>
-                <a class="btn" href="https://github.com/pravinshendkar" target="_blank" rel="noreferrer">GitHub Repository ↗</a>
               </div>
             </div>
             <div class="project-visual">
@@ -1610,7 +1868,6 @@
               </div>
               <div class="project-links">
                 <a class="btn primary" href="https://synclife-a9136.web.app/" target="_blank" rel="noreferrer">Explore Live Demo ↗</a>
-                <a class="btn" href="https://github.com/pravinshendkar" target="_blank" rel="noreferrer">GitHub Repository ↗</a>
               </div>
             </div>
             <div class="project-visual">
@@ -1673,7 +1930,7 @@
                 <strong>Core Highlights:</strong> Showcases best practices in Flutter UI component reusability, navigation flow, responsive shopping layout, and predictable state synchronization for commercial mobile applications.
               </div>
               <div class="project-links">
-                <a class="btn" href="https://github.com/pravinshendkar" target="_blank" rel="noreferrer">GitHub Repository ↗</a>
+                <span class="badge-status" style="display:inline-block; padding:8px 16px; border-radius:9999px; background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); font-size:0.85rem; color:#94a3b8;">Commercial Reference Architecture</span>
               </div>
             </div>
             <div class="project-visual">
@@ -1686,6 +1943,68 @@
                 <div class="gallery-caption" data-gallery-caption>Screenshot 1 of 3 — Product Catalog Discovery</div>
                 <div class="gallery-dots" aria-label="Screenshot navigation">
                   <button class="gallery-dot active" type="button" aria-label="Show screenshot 1"></button>
+                  <button class="gallery-dot" type="button" aria-label="Show screenshot 2"></button>
+                  <button class="gallery-dot" type="button" aria-label="Show screenshot 3"></button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- 6. TradeDemo (Technical Assignment) -->
+        <article class="project reveal">
+          <div class="project-top">
+            <div>
+              <span class="project-badge">Fintech · Technical Assignment Demo</span>
+              <h3>TradeDemo (TradeFlow)</h3>
+              <p>
+                A simulated financial trading application developed as an advanced technical assignment, demonstrating live market data visualization, order execution workflows, and portfolio performance tracking.
+              </p>
+              <div class="feature-list">
+                <div class="feature">
+                  <strong>Simulated Trading</strong>
+                  <span>Order placement &amp; trade execution workflows</span>
+                </div>
+                <div class="feature">
+                  <strong>Market Visualizations</strong>
+                  <span>Financial charts, pricing trends, &amp; market tickers</span>
+                </div>
+                <div class="feature">
+                  <strong>Portfolio Tracking</strong>
+                  <span>Real-time balance, open positions, &amp; P&amp;L views</span>
+                </div>
+                <div class="feature">
+                  <strong>Clean Architecture</strong>
+                  <span>Strict separation of Domain, Data, and Presentation</span>
+                </div>
+                <div class="feature">
+                  <strong>Reactive State Flow</strong>
+                  <span>Synchronized market updates &amp; position handling</span>
+                </div>
+                <div class="feature">
+                  <strong>Dark Financial UI</strong>
+                  <span>High-contrast trading interface optimized for mobile</span>
+                </div>
+              </div>
+              <div class="contribution-box">
+                <strong>Technical Assignment:</strong> Implemented adhering to strict technical guidelines and architectural patterns, showcasing clean state flow, responsive layout, and robust data simulation.
+              </div>
+              <div class="project-links">
+                <a class="btn primary" href="https://github.com/pravinshendkar" target="_blank" rel="noreferrer">GitHub Repository ↗</a>
+              </div>
+            </div>
+            <div class="project-visual">
+              <div class="app-gallery" data-gallery data-project="TradeDemo" data-slides='[["assets/videos/TradeFlow%20demo.mp4","Video Walkthrough — Live App Demo","video"],["assets/screenshots/tradeflow_1.png","Screenshot 1 of 3 — Portfolio Holdings &amp; Analytics"],["assets/screenshots/tradeflow_2.png","Screenshot 2 of 3 — Custom Watchlists"],["assets/screenshots/tradeflow_3.png","Screenshot 3 of 3 — Live Market Feed"]]'>
+                <div class="gallery-stage">
+                  <button class="gallery-arrow gallery-prev" type="button" aria-label="Previous screenshot">‹</button>
+                  <video src="assets/videos/TradeFlow%20demo.mp4" class="gallery-main" data-gallery-video autoplay loop muted playsinline controls style="background:#000"></video>
+                  <img src="assets/screenshots/tradeflow_1.png" alt="TradeDemo Screenshot 1 of 3 — Portfolio Holdings &amp; Analytics screen" class="gallery-main" data-gallery-image style="display:none">
+                  <button class="gallery-arrow gallery-next" type="button" aria-label="Next screenshot">›</button>
+                </div>
+                <div class="gallery-caption" data-gallery-caption>Video Walkthrough — Live App Demo</div>
+                <div class="gallery-dots" aria-label="Screenshot navigation">
+                  <button class="gallery-dot active" type="button" aria-label="Show video walkthrough"></button>
+                  <button class="gallery-dot" type="button" aria-label="Show screenshot 1"></button>
                   <button class="gallery-dot" type="button" aria-label="Show screenshot 2"></button>
                   <button class="gallery-dot" type="button" aria-label="Show screenshot 3"></button>
                 </div>
@@ -1736,14 +2055,14 @@
           <div class="section-kicker">05 — Let's Connect</div>
           <h2>Looking for a Senior Flutter Developer?</h2>
           <p>
-            I am actively open to Senior Flutter Developer and Mobile Engineer opportunities. Whether you need an experienced engineer to architect a new mobile app from scratch or scale a high-volume production codebase, let's talk.
+            I am actively open to Senior Flutter Developer opportunities as well as high-impact freelance &amp; contract projects. Whether you need an experienced engineer to architect a new mobile app from scratch, lead feature delivery, or scale a production codebase, let's connect.
           </p>
           
           <div class="contact-details">
-            <span class="contact-badge">📍 Panvel, Navi Mumbai, India</span>
+            <span class="contact-badge">📍 Navi Mumbai, India</span>
             <span class="contact-badge">📧 pravinshendkar24@gmail.com</span>
             <span class="contact-badge">📱 +91 9768711594</span>
-            <span class="contact-badge">🌐 Open to Remote &amp; Hybrid Roles</span>
+            <span class="contact-badge">🌐 Full-Time &amp; Freelance · Remote / Hybrid</span>
           </div>
 
           <div class="contact-row">
@@ -1761,7 +2080,7 @@
   <footer>
     <div class="container footer">
       <div>© 2026 Pravin Shendkar · Senior Flutter Developer</div>
-      <div>Panvel, Navi Mumbai, India · Built with modern responsive web standards</div>
+      <div>Navi Mumbai, India · Built with modern responsive web standards</div>
     </div>
   </footer>
 
@@ -1809,9 +2128,10 @@
       document.querySelectorAll('.reveal').forEach(el => el.classList.add('visible'));
     }
 
-    // Interactive Phone Screenshot Galleries
+    // Interactive Phone Screenshot & Video Galleries
     document.querySelectorAll('[data-gallery]').forEach(gallery => {
       const image = gallery.querySelector('[data-gallery-image]');
+      const video = gallery.querySelector('[data-gallery-video]');
       const caption = gallery.querySelector('[data-gallery-caption]');
       const dots = [...gallery.querySelectorAll('.gallery-dot')];
       const projectName = gallery.getAttribute('data-project') || 'Project';
@@ -1822,6 +2142,9 @@
       }
       if (!slides.length) return;
 
+      if (video && video.getAttribute('src')) {
+        video.src = withCacheBust(video.getAttribute('src'));
+      }
       if (image && image.getAttribute('src')) {
         image.src = withCacheBust(image.getAttribute('src'));
       }
@@ -1830,17 +2153,39 @@
       const showSlide = i => {
         index = (i + slides.length) % slides.length;
         const currentSlide = slides[index];
+        const isVideo = currentSlide[2] === 'video' || (currentSlide[0] && currentSlide[0].endsWith('.mp4'));
+        const activeMedia = isVideo ? video : image;
+        const inactiveMedia = isVideo ? image : video;
 
-        image.style.opacity = '0';
-        image.style.transform = 'scale(.985)';
+        if (inactiveMedia) {
+          inactiveMedia.style.opacity = '0';
+          if (inactiveMedia === video) video.pause();
+        }
+        if (activeMedia) {
+          activeMedia.style.opacity = '0';
+          activeMedia.style.transform = 'scale(.985)';
+        }
 
         setTimeout(() => {
-          image.src = withCacheBust(currentSlide[0]);
-          image.alt = `${projectName} ${currentSlide[1]} screen`;
-          if (caption) caption.textContent = currentSlide[1];
-          dots.forEach((dot, n) => dot.classList.toggle('active', n === index));
-          image.style.opacity = '1';
-          image.style.transform = 'scale(1)';
+          if (inactiveMedia) inactiveMedia.style.display = 'none';
+          if (activeMedia) {
+            activeMedia.style.display = 'block';
+            if (isVideo) {
+              if (video && !video.src.includes(currentSlide[0].split('?')[0])) {
+                video.src = withCacheBust(currentSlide[0]);
+              }
+              if (video) video.play().catch(() => {});
+            } else {
+              if (image) {
+                image.src = withCacheBust(currentSlide[0]);
+                image.alt = `${projectName} ${currentSlide[1]} screen`;
+              }
+            }
+            if (caption) caption.textContent = currentSlide[1];
+            dots.forEach((dot, n) => dot.classList.toggle('active', n === index));
+            activeMedia.style.opacity = '1';
+            activeMedia.style.transform = 'scale(1)';
+          }
         }, 120);
       };
 
