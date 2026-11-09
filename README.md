@@ -38,10 +38,10 @@ All screenshots are stored in `assets/screenshots/`. Project carousels follow th
   - `assets/screenshots/synclife_2.png` (Slide 2: Task Management & Checklists)
   - `assets/screenshots/synclife_3.png` (Slide 3: Daily Habit & Streak Tracker)
   - `assets/screenshots/synclife_4.png` (Slide 4: Habit Performance & History)
-- **NexCart:**
-  - `assets/screenshots/nexcart_1.png` (Slide 1: Product Catalog)
-  - `assets/screenshots/nexcart_2.png` (Slide 2: Product Details)
-  - `assets/screenshots/nexcart_3.png` (Slide 3: Shopping Cart)
+- **NextCart:**
+  - `assets/screenshots/nextcart_2.png` (Slide 1: Product Catalog & Featured Items)
+  - `assets/screenshots/nextcart_3.png` (Slide 2: Wishlist & Saved Products)
+  - `assets/screenshots/nextcart_1.png` (Slide 3: Shopping Cart & Order Summary)
 
 ## Customize
 
