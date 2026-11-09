@@ -34,9 +34,10 @@ All screenshots are stored in `assets/screenshots/`. Project carousels follow th
   - `assets/screenshots/speakup_3.png` (Slide 3: Role Play Scenario)
   - `assets/screenshots/speakup_4.png` (Slide 4: Custom Roleplay)
 - **SyncLife:**
-  - `assets/screenshots/synclife_1.png` (Slide 1: Notes & Tasks)
-  - `assets/screenshots/synclife_2.png` (Slide 2: Habit Tracker)
-  - `assets/screenshots/synclife_3.png` (Slide 3: Goal Tracking)
+  - `assets/screenshots/synclife_1.png` (Slide 1: Daily Notes & Categorization)
+  - `assets/screenshots/synclife_2.png` (Slide 2: Task Management & Checklists)
+  - `assets/screenshots/synclife_3.png` (Slide 3: Daily Habit & Streak Tracker)
+  - `assets/screenshots/synclife_4.png` (Slide 4: Habit Performance & History)
 - **NexCart:**
   - `assets/screenshots/nexcart_1.png` (Slide 1: Product Catalog)
   - `assets/screenshots/nexcart_2.png` (Slide 2: Product Details)
